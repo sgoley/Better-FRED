@@ -28,36 +28,105 @@ struct SeriesSnapshot: Identifiable, Hashable {
 }
 
 enum SampleData {
-    static let series = [
-        FREDSeries(id: "MORTGAGE30US", title: "30-Year Fixed Rate Mortgage Average in the United States", units: "Percent", frequency: "Weekly", source: "Freddie Mac via FRED®", description: "The 30-year fixed-rate mortgage average in the United States (weekly ending Thursday, not seasonally adjusted). Freddie Mac surveys lenders on rates and points for their most popular 30-year fixed-rate mortgage products."),
-        FREDSeries(id: "CPIAUCSL", title: "Consumer Price Index", units: "Index 1982–84=100", frequency: "Monthly", source: "U.S. Bureau of Labor Statistics", description: "Consumer prices for all urban consumers, seasonally adjusted."),
-        FREDSeries(id: "UNRATE", title: "Unemployment Rate", units: "Percent", frequency: "Monthly", source: "U.S. Bureau of Labor Statistics", description: "Civilian unemployment rate, seasonally adjusted."),
-        FREDSeries(id: "FEDFUNDS", title: "Federal Funds Effective Rate", units: "Percent", frequency: "Monthly", source: "Board of Governors of the Federal Reserve System", description: "Effective federal funds rate, monthly average."),
-        FREDSeries(id: "DFF", title: "Daily Effective Federal Funds Rate", units: "Percent", frequency: "Daily", source: "Board of Governors of the Federal Reserve System", description: "Effective federal funds rate, daily observation. Use this series when you want the un-averaged daily rate."),
-        FREDSeries(id: "DGS10", title: "10-Year Treasury Constant Maturity Rate", units: "Percent", frequency: "Daily", source: "Board of Governors of the Federal Reserve System", description: "Market yield on U.S. Treasury securities at 10-year constant maturity."),
-        FREDSeries(id: "GDPC1", title: "Real Gross Domestic Product", units: "Billions of dollars", frequency: "Quarterly", source: "U.S. Bureau of Economic Analysis", description: "Real gross domestic product, seasonally adjusted annual rate.")
-    ]
+    static var series: [FREDSeries] {
+        PopularSeries.all
+    }
 
     static func observations(for series: FREDSeries) -> [Observation] {
         if series.id == "MORTGAGE30US" {
             return HistoricalDatasets.mortgage30USObservations
         }
         let calendar = Calendar.current
+        let isDaily = series.frequency.localizedCaseInsensitiveContains("Daily")
+        let isWeekly = series.frequency.localizedCaseInsensitiveContains("Weekly")
+        let isQuarterly = series.frequency.localizedCaseInsensitiveContains("Quarterly")
+
         let base: Double = switch series.id {
         case "UNRATE": 4.1
-        case "FEDFUNDS", "DFF": 3.63
-        case "DGS10": 4.95
-        case "GDPC1": 24_200
-        default: 334.1
+        case "U6RATE": 7.9
+        case "CIVPART": 62.7
+        case "FEDFUNDS", "DFF", "IORB": 4.83
+        case "SOFR": 4.85
+        case "DGS3MO": 4.80
+        case "DGS2": 4.15
+        case "DGS5": 4.10
+        case "DGS10": 4.35
+        case "DGS30": 4.60
+        case "DFII10": 2.05
+        case "T10Y2Y": 0.20
+        case "T10Y3M": -0.45
+        case "MORTGAGE15US": 5.95
+        case "CPIAUCSL": 314.5
+        case "CPILFESL": 319.2
+        case "PCEPI": 123.1
+        case "PCEPILFE": 122.8
+        case "PPIACO": 252.0
+        case "T10YIE": 2.30
+        case "MICH": 3.0
+        case "GDPC1": 22_900.0
+        case "GDP": 28_700.0
+        case "INDPRO": 103.2
+        case "TCU": 77.8
+        case "RSAFS": 710_000.0
+        case "PCEC": 19_600.0
+        case "M2SL", "WM2NS": 21_200.0
+        case "WALCL": 7_100_000.0
+        case "TOTBKCR": 17_800.0
+        case "BUSLOANS": 2_800.0
+        case "DPSACBW027SBOG": 17_600.0
+        case "RPONTSYD": 350.0
+        case "PAYEMS": 158_700.0
+        case "JTSJOL": 7_700.0
+        case "ICSA": 225_000.0
+        case "CCSA": 1_850_000.0
+        case "CES0500000003": 35.20
+        case "CSUSHPINSA": 325.0
+        case "HOUST": 1_350.0
+        case "PERMIT": 1_420.0
+        case "EXHOSLUSM495S": 4.0
+        case "VIXCLS": 15.5
+        case "NFCI": -0.55
+        case "STLFSI4": -0.70
+        case "BAMLH0A0HYM2": 3.20
+        case "SP500": 5_600.0
+        case "DCOILWTICO": 72.5
+        case "DCOILBRENTEU": 76.2
+        case "GASREGW": 3.35
+        case "GOLDAMGBD228NLBM": 2_550.0
+        case "DTWEXBGS": 122.0
+        default: 100.0
         }
-        let isDaily = series.id == "DFF" || series.id == "DGS10"
-        let pointCount = series.id == "GDPC1" ? 40 : (isDaily ? 365 : 120)
+
+        let pointCount: Int = if isQuarterly {
+            40
+        } else if isDaily {
+            365
+        } else if isWeekly {
+            156
+        } else {
+            120
+        }
+
+        let scaleFactor = Swift.max(0.01, base * 0.03)
+
         return (0..<pointCount).map { index in
-            let date = isDaily ? calendar.date(byAdding: .day, value: index - pointCount + 1, to: .now)! : calendar.date(byAdding: .month, value: index - pointCount + 1, to: .now)!
+            let date: Date = if isDaily {
+                calendar.date(byAdding: .day, value: index - pointCount + 1, to: .now)!
+            } else if isWeekly {
+                calendar.date(byAdding: .day, value: (index - pointCount + 1) * 7, to: .now)!
+            } else if isQuarterly {
+                calendar.date(byAdding: .month, value: (index - pointCount + 1) * 3, to: .now)!
+            } else {
+                calendar.date(byAdding: .month, value: index - pointCount + 1, to: .now)!
+            }
+
             let offsetFromEnd = Double(index - (pointCount - 1))
-            let cycle = sin(Double(index) / (isDaily ? 25.0 : 5.0)) * (series.id == "GDPC1" ? 180.0 : 0.25)
-            let drift = offsetFromEnd * (series.id == "GDPC1" ? -25.0 : (isDaily ? 0.0008 : 0.004))
-            return Observation(date: date, value: Swift.max(0.05, base + cycle + drift))
+            let cycleFreq = isDaily ? 28.0 : (isWeekly ? 12.0 : 6.0)
+            let cycle = sin(Double(index) / cycleFreq) * scaleFactor
+            let drift = offsetFromEnd * (scaleFactor * 0.015)
+            let noise = cos(Double(index) * 0.8) * (scaleFactor * 0.15)
+            let finalValue = base + cycle + drift + noise
+            return Observation(date: date, value: (series.id == "T10Y2Y" || series.id == "T10Y3M" || series.id == "NFCI" || series.id == "STLFSI4") ? finalValue : Swift.max(0.01, finalValue))
         }
     }
 }

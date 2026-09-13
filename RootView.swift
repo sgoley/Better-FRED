@@ -331,31 +331,182 @@ struct SummaryPill: View {
     }
 }
 
+struct CategoryChip: View {
+    let category: SeriesCategory
+    let isSelected: Bool
+    let action: () -> Void
+
+    var body: some View {
+        Button(action: action) {
+            HStack(spacing: 5) {
+                Image(systemName: category.icon)
+                    .font(.caption2.weight(.semibold))
+                Text(category.rawValue)
+                    .font(.caption.weight(.medium))
+            }
+            .padding(.horizontal, 12)
+            .padding(.vertical, 6)
+            .background(isSelected ? BetterTheme.coral : BetterTheme.surface, in: Capsule())
+            .foregroundStyle(isSelected ? Color.white : BetterTheme.primary)
+            .overlay(Capsule().stroke(isSelected ? Color.clear : BetterTheme.hairline, lineWidth: 1))
+        }
+        .buttonStyle(.plain)
+    }
+}
+
+struct ExploreSeriesRow: View {
+    let series: FREDSeries
+    @EnvironmentObject private var model: AppModel
+
+    var isCurated: Bool {
+        PopularSeries.all.contains(where: { $0.id == series.id })
+    }
+
+    var body: some View {
+        VStack(alignment: .leading, spacing: 4) {
+            HStack(alignment: .top) {
+                Text(series.title)
+                    .font(.body.weight(.semibold))
+                    .foregroundStyle(BetterTheme.primary)
+                    .fixedSize(horizontal: false, vertical: true)
+                Spacer(minLength: 6)
+                if isCurated {
+                    HStack(spacing: 3) {
+                        Image(systemName: "bolt.fill")
+                            .font(.system(size: 8))
+                        Text("Instant")
+                            .font(.system(size: 9, weight: .bold))
+                    }
+                    .padding(.horizontal, 6)
+                    .padding(.vertical, 2.5)
+                    .background(BetterTheme.sage.opacity(0.18), in: RoundedRectangle(cornerRadius: 4))
+                    .foregroundStyle(BetterTheme.sage)
+                }
+            }
+
+            HStack(spacing: 6) {
+                Text(series.id)
+                    .font(.caption.bold())
+                    .foregroundStyle(BetterTheme.coral)
+
+                Text("•").font(.caption).foregroundStyle(.secondary)
+                Text(series.frequency).font(.caption).foregroundStyle(.secondary)
+                Text("•").font(.caption).foregroundStyle(.secondary)
+                Text(series.units).font(.caption).foregroundStyle(.secondary)
+            }
+        }
+        .padding(.vertical, 2)
+    }
+}
+
 struct ExploreView: View {
     @EnvironmentObject private var model: AppModel
     @State private var query = ""
-    @State private var results: [FREDSeries] = SampleData.series
+    @State private var selectedCategory: SeriesCategory = .all
+    @State private var results: [FREDSeries] = PopularSeries.all
+
     var body: some View {
         NavigationStack {
-            List(results) { series in
-                NavigationLink(value: series) {
-                    VStack(alignment: .leading, spacing: 4) {
-                        Text(series.title).font(.body.weight(.semibold))
-                        HStack(spacing: 6) {
-                            Text(series.id).font(.caption.bold()).foregroundStyle(BetterTheme.coral)
-                            Text("•").font(.caption).foregroundStyle(.secondary)
-                            Text(series.frequency).font(.caption).foregroundStyle(.secondary)
-                            Text("•").font(.caption).foregroundStyle(.secondary)
-                            Text(series.units).font(.caption).foregroundStyle(.secondary)
+            VStack(spacing: 0) {
+                // Category Pills Filter Bar
+                ScrollView(.horizontal, showsIndicators: false) {
+                    HStack(spacing: 8) {
+                        ForEach(SeriesCategory.allCases) { cat in
+                            CategoryChip(category: cat, isSelected: selectedCategory == cat) {
+                                selectedCategory = cat
+                                updateInstantMatches()
+                            }
                         }
+                    }
+                    .padding(.horizontal, 16)
+                    .padding(.vertical, 10)
+                }
+                .background(BetterTheme.background)
+
+                Divider().opacity(0.4)
+
+                // Results List
+                if results.isEmpty {
+                    ContentUnavailableView {
+                        Label("No Series Found", systemImage: "magnifyingglass")
+                    } description: {
+                        Text(query.isEmpty
+                             ? "No series available in \(selectedCategory.rawValue)."
+                             : "No matching series found for \"\(query)\". Try searching by keyword (e.g. 'inflation') or symbol code (e.g. 'CPIAUCSL').")
+                    } actions: {
+                        if selectedCategory != .all || !query.isEmpty {
+                            Button("Reset Filters") {
+                                query = ""
+                                selectedCategory = .all
+                                updateInstantMatches()
+                            }
+                            .buttonStyle(.bordered)
+                        }
+                    }
+                } else {
+                    List {
+                        Section {
+                            ForEach(results) { series in
+                                NavigationLink(value: series) {
+                                    ExploreSeriesRow(series: series)
+                                }
+                            }
+                        } header: {
+                            HStack {
+                                Text(sectionHeaderTitle)
+                                    .font(.caption.weight(.semibold))
+                                    .foregroundStyle(.secondary)
+                                Spacer()
+                                if model.isSearchingRemote {
+                                    HStack(spacing: 4) {
+                                        ProgressView()
+                                            .controlSize(.mini)
+                                        Text("Searching FRED...")
+                                            .font(.caption2)
+                                            .foregroundStyle(.secondary)
+                                    }
+                                } else {
+                                    Text("\(results.count) series")
+                                        .font(.caption2)
+                                        .foregroundStyle(.secondary)
+                                }
+                            }
+                            .textCase(nil)
+                        }
+                    }
+                    .listStyle(.insetGrouped)
+                }
+            }
+            .searchable(text: $query, prompt: "Search 800k+ series or symbols")
+            .navigationTitle("Explore")
+            .navigationDestination(for: FREDSeries.self) { SeriesDetailView(series: $0) }
+            .onChange(of: query) { _, _ in
+                updateInstantMatches()
+            }
+            .task(id: "\(selectedCategory.rawValue):\(query)") {
+                let trimmed = query.trimmingCharacters(in: .whitespacesAndNewlines)
+                guard !trimmed.isEmpty, model.isLive else { return }
+                // Debounce network searches by 300ms
+                try? await Task.sleep(for: .milliseconds(300))
+                if !Task.isCancelled {
+                    let remoteResults = await model.search(trimmed, category: selectedCategory)
+                    if !Task.isCancelled {
+                        results = remoteResults
                     }
                 }
             }
-            .searchable(text: $query, prompt: "Search series or symbols")
-            .navigationTitle("Explore")
-            .navigationDestination(for: FREDSeries.self) { SeriesDetailView(series: $0) }
-            .task(id: query) { results = await model.search(query) }
         }
+    }
+
+    private var sectionHeaderTitle: String {
+        if !query.isEmpty {
+            return "Search Results"
+        }
+        return selectedCategory == .all ? "Top Macro Indicators (Pre-cached)" : "\(selectedCategory.rawValue) Indicators"
+    }
+
+    private func updateInstantMatches() {
+        results = model.localMatches(for: query, category: selectedCategory)
     }
 }
 

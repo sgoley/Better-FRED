@@ -7,10 +7,7 @@ protocol FREDDataProviding {
 
 struct PreviewFREDClient: FREDDataProviding {
     func search(_ query: String) async throws -> [FREDSeries] {
-        guard !query.isEmpty else { return SampleData.series }
-        return SampleData.series.filter { series in
-            series.id.localizedCaseInsensitiveContains(query) || series.title.localizedCaseInsensitiveContains(query)
-        }
+        PopularSeries.search(query: query)
     }
 
     func snapshot(for series: FREDSeries) async throws -> SeriesSnapshot {
@@ -24,9 +21,11 @@ struct FREDAPIClient: FREDDataProviding {
     private let decoder = JSONDecoder()
 
     func search(_ query: String) async throws -> [FREDSeries] {
+        let clean = query.trimmingCharacters(in: .whitespacesAndNewlines)
+        guard !clean.isEmpty else { return [] }
         var components = URLComponents(string: "https://api.stlouisfed.org/fred/series/search")!
         components.queryItems = [
-            URLQueryItem(name: "search_text", value: query),
+            URLQueryItem(name: "search_text", value: clean),
             URLQueryItem(name: "api_key", value: apiKey),
             URLQueryItem(name: "file_type", value: "json")
         ]
@@ -118,7 +117,9 @@ final class AppModel: ObservableObject {
     @Published var isLive: Bool = false
     @Published var loadingSeriesIDs: Set<String> = []
     @Published private(set) var snapshots: [String: SeriesSnapshot] = [:]
+    @Published var isSearchingRemote: Bool = false
 
+    private var searchCache: [String: [FREDSeries]] = [:]
     private let watchlistKey = "betterecon.watchlist"
 
     init() {
@@ -175,6 +176,7 @@ final class AppModel: ObservableObject {
             self.client = PreviewFREDClient()
             self.isLive = false
             self.snapshots.removeAll()
+            self.searchCache.removeAll()
             preloadWatchlist()
             return (true, "Switched to local preview mode.")
         }
@@ -190,6 +192,7 @@ final class AppModel: ObservableObject {
         self.client = FREDAPIClient(apiKey: clean)
         self.isLive = true
         self.snapshots.removeAll()
+        self.searchCache.removeAll()
         preloadWatchlist()
         return (true, "Key verified and securely saved to Keychain.")
     }
@@ -230,6 +233,7 @@ final class AppModel: ObservableObject {
 
     func clearCache() {
         snapshots.removeAll()
+        searchCache.removeAll()
         preloadWatchlist()
     }
 
@@ -275,11 +279,60 @@ final class AppModel: ObservableObject {
 
     func series(with id: String) -> FREDSeries? { catalog.first { $0.id == id } }
 
-    func search(_ query: String) async -> [FREDSeries] {
+    /// Instant, zero-latency synchronous local search across the pre-cached catalog.
+    func localMatches(for query: String, category: SeriesCategory = .all) -> [FREDSeries] {
+        let baseList: [FREDSeries]
+        if category == .all {
+            baseList = catalog
+        } else {
+            let categorySeriesIds = Set(PopularSeries.series(in: category).map(\.id))
+            baseList = catalog.filter { categorySeriesIds.contains($0.id) }
+        }
+        return PopularSeries.search(query: query, in: baseList)
+    }
+
+    /// Hybrid search:
+    /// 1. Immediately returns cached query results if available.
+    /// 2. If live and not cached, fetches remote FRED results, merges new series into catalog,
+    ///    caches the combined result, and returns.
+    /// 3. Falls back gracefully to local matches on failure or offline.
+    func search(_ query: String, category: SeriesCategory = .all) async -> [FREDSeries] {
+        let trimmed = query.trimmingCharacters(in: .whitespacesAndNewlines)
+        guard !trimmed.isEmpty else {
+            return localMatches(for: "", category: category)
+        }
+
+        let cacheKey = "\(category.rawValue):\(trimmed.lowercased())"
+        if let cached = searchCache[cacheKey] {
+            return cached
+        }
+
+        guard isLive else {
+            let local = localMatches(for: trimmed, category: category)
+            searchCache[cacheKey] = local
+            return local
+        }
+
+        isSearchingRemote = true
+        defer { isSearchingRemote = false }
+
         do {
-            let results = try await client.search(query)
-            catalog = Array(Set(catalog + results)).sorted { $0.title < $1.title }
-            return results
-        } catch { return [] }
+            let remote = try await client.search(trimmed)
+            let existingIDs = Set(catalog.map(\.id))
+            let newSeries = remote.filter { !existingIDs.contains($0.id) }
+            if !newSeries.isEmpty {
+                catalog.append(contentsOf: newSeries)
+            }
+
+            let local = localMatches(for: trimmed, category: category)
+            let localIDs = Set(local.map(\.id))
+            let uniqueRemote = remote.filter { !localIDs.contains($0.id) }
+            let combined = local + uniqueRemote
+
+            searchCache[cacheKey] = combined
+            return combined
+        } catch {
+            return localMatches(for: trimmed, category: category)
+        }
     }
 }

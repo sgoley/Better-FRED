@@ -8,8 +8,10 @@ enum BetterTheme {
     static let secondary = Color(red: 0.43, green: 0.51, blue: 0.61)
     static let mutedOnNavy = Color(red: 0.60, green: 0.70, blue: 0.81)
     static let hairline = Color.white.opacity(0.15)
+    static let primary = Color.primary
     static let cyan = Color(red: 0.07, green: 0.78, blue: 0.70)
     static let mint = cyan
+    static let sage = cyan
     static let lime = Color(red: 0.78, green: 0.88, blue: 0.12)
     static let coral = Color(red: 1.0, green: 0.40, blue: 0.38)
     static let gold = Color(red: 1.0, green: 0.73, blue: 0.29)

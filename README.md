@@ -5,7 +5,8 @@ An open-source SwiftUI client for exploring, comparing, and monitoring US macroe
 ## Current slice
 
 - Dashboard with watchlist cards
-- Series search
+- Instant series search with pre-cached catalog of 50+ top FRED benchmark series across 9 economic categories
+- Debounced deep search against FRED's 800,000+ series database with in-memory query result caching
 - Series detail with interactive Swift Charts graph
 - Time-range switching
 - Local watchlist persistence
