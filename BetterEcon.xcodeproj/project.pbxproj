@@ -1,0 +1,1255 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		07E3C092C9A81345445C5EF6 /* KeychainHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA97BE3EAC17CBEE0F340B8D /* KeychainHelper.swift */; };
+		0CF59F15EC852EC91E3EEEB5 /* pre-applypatch.sample in Resources */ = {isa = PBXBuildFile; fileRef = A36B0BA56A523C5ED8ECFDEF /* pre-applypatch.sample */; };
+		17E2A7773CF88F88B5D858C2 /* push-to-checkout.sample in Resources */ = {isa = PBXBuildFile; fileRef = 4EFDE7C43D0ED5112E7E09CB /* push-to-checkout.sample */; };
+		1C8C027F3D767334910E0845 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DACCA7C2B590B04FBDB05DD9 /* Assets.xcassets */; };
+		2211324FF49425780CCD1F82 /* post-update.sample in Resources */ = {isa = PBXBuildFile; fileRef = 646E5091B58BC16B6CFA5497 /* post-update.sample */; };
+		4813F316F71196079CDFC57F /* BetterEconWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DB90AA47ACE9BA4AD3DD02 /* BetterEconWidget.swift */; };
+		4FC79AB991F2480295524D8B /* HistoricalDatasets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08769B9EC9848B1A9C0C8C01 /* HistoricalDatasets.swift */; };
+		58450480CC09231C6F756C09 /* commit-msg.sample in Resources */ = {isa = PBXBuildFile; fileRef = 2D1B7D5539FA10514DE5C3D8 /* commit-msg.sample */; };
+		64039F3C6AACEF3295270819 /* Services.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBFEAB72A6FFA5BE7A5151C5 /* Services.swift */; };
+		64D757A59955B458BE2525C3 /* PRIVACY_POLICY.md in Resources */ = {isa = PBXBuildFile; fileRef = 91609BD7A9A29D6AB8B3E77C /* PRIVACY_POLICY.md */; };
+		67D5D95604818D14DBA3D825 /* pre-commit.sample in Resources */ = {isa = PBXBuildFile; fileRef = FCA1EBCAB4D45CBABA2DEE8E /* pre-commit.sample */; };
+		6C98442BA8E218AE88493DD4 /* CompareView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 295F24F00AB3D51F05851AB7 /* CompareView.swift */; };
+		6DBAE31FD62D0B103DD792DD /* prepare-commit-msg.sample in Resources */ = {isa = PBXBuildFile; fileRef = F5438DEB1E67F8507F66F67B /* prepare-commit-msg.sample */; };
+		6E2DD28C027EE38DEF1A67EC /* project.yml in Resources */ = {isa = PBXBuildFile; fileRef = E1C2E30E9390A7B455B78A46 /* project.yml */; };
+		6E9791E5FE340DEA4C691142 /* applypatch-msg.sample in Resources */ = {isa = PBXBuildFile; fileRef = 399683D493D992798F98C5EA /* applypatch-msg.sample */; };
+		71AA601CE6BD103605051DCB /* pre-receive.sample in Resources */ = {isa = PBXBuildFile; fileRef = 58A1148BC18755F8045ABD4E /* pre-receive.sample */; };
+		74772290C5D25369D8500C29 /* pre-merge-commit.sample in Resources */ = {isa = PBXBuildFile; fileRef = C2BAEB0E545835FAE304AEFB /* pre-merge-commit.sample */; };
+		78322D5B3449708BA932813D /* SeriesTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13B3CD641B340FBB731B1A9 /* SeriesTableView.swift */; };
+		7EBE6F6C05A32E690F58D6DA /* pre-push.sample in Resources */ = {isa = PBXBuildFile; fileRef = 51B6607D5E2944FD92FDCAE5 /* pre-push.sample */; };
+		97ADA5A078D2419B3C27C3ED /* SeriesDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41B344EF441B39FFAD25F3B2 /* SeriesDetailView.swift */; };
+		9EAA29236D2656817C06478B /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = CF95E97AFFAD0AB7BCE67342 /* README.md */; };
+		A3ADB6F1DB452AE7B2B308A6 /* FullscreenChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C0A60537D78347782F76F6C /* FullscreenChartView.swift */; };
+		ADF8D0A7515E5C33B1E7C77B /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB76E2B6C8FA9A450D555806 /* RootView.swift */; };
+		B261218F937892B731223374 /* BetterEconApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D46774160C6C051647DA5C /* BetterEconApp.swift */; };
+		B38D6206CB65AA6BFBCB035D /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A2ABCF58083220E656866A4 /* Models.swift */; };
+		BCA797A0332A7E21CE3440B6 /* sendemail-validate.sample in Resources */ = {isa = PBXBuildFile; fileRef = 50C1B163553BBA487122D479 /* sendemail-validate.sample */; };
+		C5F8B6D162CB6256B24EF54A /* fsmonitor-watchman.sample in Resources */ = {isa = PBXBuildFile; fileRef = 382208948092FE0F4B348757 /* fsmonitor-watchman.sample */; };
+		D022B0821D28BCC609EB6A75 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75665C311857740290AC5EB3 /* SettingsView.swift */; };
+		D20DFE82F71CAFAD499C9449 /* ChartComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C7E293664635D65FBE4E5C9 /* ChartComponents.swift */; };
+		E363496E1354B8426179C11E /* update.sample in Resources */ = {isa = PBXBuildFile; fileRef = ED045858658DE383AA50F571 /* update.sample */; };
+		EF25ABB93236DD74A8EF0D69 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 88D72C51CBE99658EAD5634F /* PrivacyInfo.xcprivacy */; };
+		F0C4044621E1EAF35D8B7996 /* DesignSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 406D5D32A383342C6099ACAD /* DesignSystem.swift */; };
+		F72D0F38FBD09EE747C3A650 /* pre-rebase.sample in Resources */ = {isa = PBXBuildFile; fileRef = EB2AA6E46FDD51222A1EBDE4 /* pre-rebase.sample */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		016A3BA9DB514D24BD536159 /* 548bc84f37984f86d5826d886a889dbd52e8c0 */ = {isa = PBXFileReference; path = 548bc84f37984f86d5826d886a889dbd52e8c0; sourceTree = "<group>"; };
+		064985EBD66011FC0EF3ACA6 /* 918de803f05dfc40f78ea820b480fe801abf23 */ = {isa = PBXFileReference; path = 918de803f05dfc40f78ea820b480fe801abf23; sourceTree = "<group>"; };
+		081BA7CF7C019C5258071C7D /* 9a3ccdc144aca24a6bc6135118ee687026735c */ = {isa = PBXFileReference; path = 9a3ccdc144aca24a6bc6135118ee687026735c; sourceTree = "<group>"; };
+		082C75D5866E7D3E5BEA54FB /* 79ff800df1eb1aeab0939a1e858c42627e72f8 */ = {isa = PBXFileReference; path = 79ff800df1eb1aeab0939a1e858c42627e72f8; sourceTree = "<group>"; };
+		08769B9EC9848B1A9C0C8C01 /* HistoricalDatasets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoricalDatasets.swift; sourceTree = "<group>"; };
+		0A57717992C39C5DAA8E6600 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		0A7241C6F2A6C9B4568F092F /* 7bb279e1785fa87a4bd61c38719fadf1f76b37 */ = {isa = PBXFileReference; path = 7bb279e1785fa87a4bd61c38719fadf1f76b37; sourceTree = "<group>"; };
+		0D08DF57E02393E6DEF3CF96 /* d716d11bf70794efd203dc7139e581517c204a */ = {isa = PBXFileReference; path = d716d11bf70794efd203dc7139e581517c204a; sourceTree = "<group>"; };
+		0E96F5426FA5D06D53E84610 /* 6f65d35650d32a61551249bdc6174a81edc062 */ = {isa = PBXFileReference; path = 6f65d35650d32a61551249bdc6174a81edc062; sourceTree = "<group>"; };
+		0FE4767DC6E61308F9F31651 /* 527edbc10a4425a6882a96dcd8667fc6d08bd2 */ = {isa = PBXFileReference; path = 527edbc10a4425a6882a96dcd8667fc6d08bd2; sourceTree = "<group>"; };
+		10B46EEBE6ECC0EB07EF8C4A /* FETCH_HEAD */ = {isa = PBXFileReference; path = FETCH_HEAD; sourceTree = "<group>"; };
+		139E1A2A17F27D483A8E3E8F /* 29faaca7d36abe75303d98380ca0d7ee46fb1b */ = {isa = PBXFileReference; path = 29faaca7d36abe75303d98380ca0d7ee46fb1b; sourceTree = "<group>"; };
+		16B76800A056B87813B7D62B /* 10cff74b47fbb5dd76eefdf63c81941f7a1618 */ = {isa = PBXFileReference; path = 10cff74b47fbb5dd76eefdf63c81941f7a1618; sourceTree = "<group>"; };
+		1F23B5755B0711EECA19DF85 /* 43f8117522ee9e5fccb4334c8772ea39339bd6 */ = {isa = PBXFileReference; path = 43f8117522ee9e5fccb4334c8772ea39339bd6; sourceTree = "<group>"; };
+		1FEC2455A991A9325F304E47 /* 841f0458e532443e8e2765010c5c6332778677 */ = {isa = PBXFileReference; path = 841f0458e532443e8e2765010c5c6332778677; sourceTree = "<group>"; };
+		243DD68AEC43FA1B644F273E /* 2e10cde3659e827af3a74cdef013e7ca368a3e */ = {isa = PBXFileReference; path = 2e10cde3659e827af3a74cdef013e7ca368a3e; sourceTree = "<group>"; };
+		2479DA9E05BBE419324D6954 /* 88b7c818dbb3c1cc4aee99099b631701364794 */ = {isa = PBXFileReference; path = 88b7c818dbb3c1cc4aee99099b631701364794; sourceTree = "<group>"; };
+		255F5115D771F7E0C7BD908F /* a86d73e7c3a4cc082ae1c743ea7780eaea2aa3 */ = {isa = PBXFileReference; path = a86d73e7c3a4cc082ae1c743ea7780eaea2aa3; sourceTree = "<group>"; };
+		25F74D4F877D50BFA7AC4850 /* .gitignore */ = {isa = PBXFileReference; path = .gitignore; sourceTree = "<group>"; };
+		266BB107BA9FA672F9835F9D /* 1006f1844dd1d3de55cae1f066d02af31d511b */ = {isa = PBXFileReference; path = 1006f1844dd1d3de55cae1f066d02af31d511b; sourceTree = "<group>"; };
+		27490ABD74BA2F332C6C4768 /* f3805ffbeea94333589c0bf402785d887cdeb6 */ = {isa = PBXFileReference; path = f3805ffbeea94333589c0bf402785d887cdeb6; sourceTree = "<group>"; };
+		27E93CFBE41E79423106C44E /* HEAD */ = {isa = PBXFileReference; path = HEAD; sourceTree = "<group>"; };
+		295F24F00AB3D51F05851AB7 /* CompareView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompareView.swift; sourceTree = "<group>"; };
+		2D1B7D5539FA10514DE5C3D8 /* commit-msg.sample */ = {isa = PBXFileReference; path = "commit-msg.sample"; sourceTree = "<group>"; };
+		2EF5F310B5A5A1B9199F12C4 /* e78d959339587fd1e3ca5065020fd2b6723888 */ = {isa = PBXFileReference; path = e78d959339587fd1e3ca5065020fd2b6723888; sourceTree = "<group>"; };
+		32DB90AA47ACE9BA4AD3DD02 /* BetterEconWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BetterEconWidget.swift; sourceTree = "<group>"; };
+		36288C6E14AE39A7D75F01EA /* b8ac300f89ef6ffbd713da4a4ed03cad353367 */ = {isa = PBXFileReference; path = b8ac300f89ef6ffbd713da4a4ed03cad353367; sourceTree = "<group>"; };
+		37D46774160C6C051647DA5C /* BetterEconApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BetterEconApp.swift; sourceTree = "<group>"; };
+		382208948092FE0F4B348757 /* fsmonitor-watchman.sample */ = {isa = PBXFileReference; path = "fsmonitor-watchman.sample"; sourceTree = "<group>"; };
+		390D8A66118BC8CDCF2D089D /* HEAD */ = {isa = PBXFileReference; path = HEAD; sourceTree = "<group>"; };
+		399683D493D992798F98C5EA /* applypatch-msg.sample */ = {isa = PBXFileReference; path = "applypatch-msg.sample"; sourceTree = "<group>"; };
+		3B9C17AE2DAEEDD0EF49CA7D /* HEAD */ = {isa = PBXFileReference; path = HEAD; sourceTree = "<group>"; };
+		3BE4DDA73D6ECA6F7CF51E22 /* 636ae34224e9e7eba503ca9d69430e20d8dfc1 */ = {isa = PBXFileReference; path = 636ae34224e9e7eba503ca9d69430e20d8dfc1; sourceTree = "<group>"; };
+		406D5D32A383342C6099ACAD /* DesignSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignSystem.swift; sourceTree = "<group>"; };
+		41B344EF441B39FFAD25F3B2 /* SeriesDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeriesDetailView.swift; sourceTree = "<group>"; };
+		434E4D04A94B066F9E49271A /* 432fb3f54a6196e1cf08a596d3395054e027fc */ = {isa = PBXFileReference; path = 432fb3f54a6196e1cf08a596d3395054e027fc; sourceTree = "<group>"; };
+		490FE997B3C3215F0D3098AF /* 3ea69184e7065728d141743d2fe3e429c7c9f3 */ = {isa = PBXFileReference; path = 3ea69184e7065728d141743d2fe3e429c7c9f3; sourceTree = "<group>"; };
+		49FF540314BA3B4A2A1E5788 /* config */ = {isa = PBXFileReference; path = config; sourceTree = "<group>"; };
+		4C7E293664635D65FBE4E5C9 /* ChartComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartComponents.swift; sourceTree = "<group>"; };
+		4D0F50A74F5791359BB45693 /* main */ = {isa = PBXFileReference; path = main; sourceTree = "<group>"; };
+		4EFDE7C43D0ED5112E7E09CB /* push-to-checkout.sample */ = {isa = PBXFileReference; path = "push-to-checkout.sample"; sourceTree = "<group>"; };
+		50C1B163553BBA487122D479 /* sendemail-validate.sample */ = {isa = PBXFileReference; path = "sendemail-validate.sample"; sourceTree = "<group>"; };
+		51B6607D5E2944FD92FDCAE5 /* pre-push.sample */ = {isa = PBXFileReference; path = "pre-push.sample"; sourceTree = "<group>"; };
+		566BF959667BA18929DCABA6 /* main */ = {isa = PBXFileReference; path = main; sourceTree = "<group>"; };
+		58A1148BC18755F8045ABD4E /* pre-receive.sample */ = {isa = PBXFileReference; path = "pre-receive.sample"; sourceTree = "<group>"; };
+		5C03FDFF804D636828D23ACA /* 748da3a08f6d907e8477f9cd72e4358d21b6f3 */ = {isa = PBXFileReference; path = 748da3a08f6d907e8477f9cd72e4358d21b6f3; sourceTree = "<group>"; };
+		6196A6EC894F84ED94BEB9F9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		619D37B0225FB22D36FA7B93 /* 2f04422b6165930d5b0d6d5813ffdbb49af374 */ = {isa = PBXFileReference; path = 2f04422b6165930d5b0d6d5813ffdbb49af374; sourceTree = "<group>"; };
+		622F52359A07D3E3DBB1B16C /* c00596a7fca3f3d4bdd64053b69d86745f9e10 */ = {isa = PBXFileReference; path = c00596a7fca3f3d4bdd64053b69d86745f9e10; sourceTree = "<group>"; };
+		639956C476747DADFCE6F4E7 /* bbc6f15e9151a8ba9ab206f1944c7b9c1fbc9d */ = {isa = PBXFileReference; path = bbc6f15e9151a8ba9ab206f1944c7b9c1fbc9d; sourceTree = "<group>"; };
+		646E5091B58BC16B6CFA5497 /* post-update.sample */ = {isa = PBXFileReference; path = "post-update.sample"; sourceTree = "<group>"; };
+		68A479C02F545B8599DA1D8E /* f7c95e88c3d989489edc16c6a6c2c67ecaf54b */ = {isa = PBXFileReference; path = f7c95e88c3d989489edc16c6a6c2c67ecaf54b; sourceTree = "<group>"; };
+		6AAE3A0F8CFE1F9135FBE244 /* index */ = {isa = PBXFileReference; path = index; sourceTree = "<group>"; };
+		6C0A60537D78347782F76F6C /* FullscreenChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullscreenChartView.swift; sourceTree = "<group>"; };
+		744BA39483FD00A4820E92F4 /* a30733ca59d9e5904606a909e45ba948564d27 */ = {isa = PBXFileReference; path = a30733ca59d9e5904606a909e45ba948564d27; sourceTree = "<group>"; };
+		75665C311857740290AC5EB3 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		785884D9BD3E9E9C2AC8DE37 /* main */ = {isa = PBXFileReference; path = main; sourceTree = "<group>"; };
+		793CCC31F1821F534C68DF83 /* 4255c623f5d715fa9664f11bf477b399d15360 */ = {isa = PBXFileReference; path = 4255c623f5d715fa9664f11bf477b399d15360; sourceTree = "<group>"; };
+		7A2ABCF58083220E656866A4 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
+		7B1F316417AF2DF9B94B32FC /* 04984efb20237516c6bbf4347bf86aa5664573 */ = {isa = PBXFileReference; path = 04984efb20237516c6bbf4347bf86aa5664573; sourceTree = "<group>"; };
+		7F18BB1C06F991EEC07A5E34 /* a87ab7d5333300acb33d08e791d55522845424 */ = {isa = PBXFileReference; path = a87ab7d5333300acb33d08e791d55522845424; sourceTree = "<group>"; };
+		80F5378ED20C4DD80278567A /* 7450a2ffd43b1dfc10351eb6d263b1b517d9c7 */ = {isa = PBXFileReference; path = 7450a2ffd43b1dfc10351eb6d263b1b517d9c7; sourceTree = "<group>"; };
+		819F6FF008D0D106504D2F2C /* 5a57b76ee56d93dad1579d85c0677eb809d7c0 */ = {isa = PBXFileReference; path = 5a57b76ee56d93dad1579d85c0677eb809d7c0; sourceTree = "<group>"; };
+		88D72C51CBE99658EAD5634F /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
+		8926B3AAF29E8381F4145B1D /* 9b0550ee8469530ad961dfb2d0ed3b6e220880 */ = {isa = PBXFileReference; path = 9b0550ee8469530ad961dfb2d0ed3b6e220880; sourceTree = "<group>"; };
+		8B4ECF5BA100EF88A7662DA2 /* f5654bc37db99c0c29ac4c087ab6c9030ac614 */ = {isa = PBXFileReference; path = f5654bc37db99c0c29ac4c087ab6c9030ac614; sourceTree = "<group>"; };
+		9024F2595C473BCC64CB1032 /* c19cc17a1d6452956495c8f392c3673f08a9eb */ = {isa = PBXFileReference; path = c19cc17a1d6452956495c8f392c3673f08a9eb; sourceTree = "<group>"; };
+		91609BD7A9A29D6AB8B3E77C /* PRIVACY_POLICY.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = PRIVACY_POLICY.md; sourceTree = "<group>"; };
+		98DFDF04F704F5E6CCD9FFAD /* BetterEcon.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = BetterEcon.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		993B1172D0BB7D987CF70173 /* c93190db04cea7a7585d0b05660dc60670cd5b */ = {isa = PBXFileReference; path = c93190db04cea7a7585d0b05660dc60670cd5b; sourceTree = "<group>"; };
+		9A1B3AFCBA8E1B5C10F63BFA /* d923110f8f83dbd1f3f5937fa1edcf498c4c7c */ = {isa = PBXFileReference; path = d923110f8f83dbd1f3f5937fa1edcf498c4c7c; sourceTree = "<group>"; };
+		9C4C78026EC6345DC177FB73 /* ORIG_HEAD */ = {isa = PBXFileReference; path = ORIG_HEAD; sourceTree = "<group>"; };
+		9C78EDE3DA03FFF1B2992723 /* a0fdc57d1916a970783656c41303143272c7df */ = {isa = PBXFileReference; path = a0fdc57d1916a970783656c41303143272c7df; sourceTree = "<group>"; };
+		9D4461B0AD44071CE0E27D56 /* 7c8ab2a44c660aa92be5847183f48b6e1421a3 */ = {isa = PBXFileReference; path = 7c8ab2a44c660aa92be5847183f48b6e1421a3; sourceTree = "<group>"; };
+		9E01D7B218957FB614FE8CBC /* description */ = {isa = PBXFileReference; path = description; sourceTree = "<group>"; };
+		9FB526D6AFC6FE2ABF92B314 /* d7d86293fa09cbc98a44bd5b76b27968f3ffc0 */ = {isa = PBXFileReference; path = d7d86293fa09cbc98a44bd5b76b27968f3ffc0; sourceTree = "<group>"; };
+		A13B3CD641B340FBB731B1A9 /* SeriesTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeriesTableView.swift; sourceTree = "<group>"; };
+		A316AFB73FDA3A3B1C362900 /* 65259d04281ff3fe06bea78156953d0cc43f7b */ = {isa = PBXFileReference; path = 65259d04281ff3fe06bea78156953d0cc43f7b; sourceTree = "<group>"; };
+		A36B0BA56A523C5ED8ECFDEF /* pre-applypatch.sample */ = {isa = PBXFileReference; path = "pre-applypatch.sample"; sourceTree = "<group>"; };
+		A6E31C48CFF7D4CE239DBD59 /* .env */ = {isa = PBXFileReference; path = .env; sourceTree = "<group>"; };
+		A72C889AD482FCC12DC8837C /* ea325123befc5d5637da2dcd2a939ef5f8bfae */ = {isa = PBXFileReference; path = ea325123befc5d5637da2dcd2a939ef5f8bfae; sourceTree = "<group>"; };
+		ADCC1DD5A30482EF89F745C2 /* c9bbbdbee75cc7d165f60aff3dd36290b903ca */ = {isa = PBXFileReference; path = c9bbbdbee75cc7d165f60aff3dd36290b903ca; sourceTree = "<group>"; };
+		AF58527486CDDE373D7AAD80 /* 2f1acb4eb7a50e5734273e1bfa1ca61096b7b1 */ = {isa = PBXFileReference; path = 2f1acb4eb7a50e5734273e1bfa1ca61096b7b1; sourceTree = "<group>"; };
+		BA97BE3EAC17CBEE0F340B8D /* KeychainHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainHelper.swift; sourceTree = "<group>"; };
+		BBFEAB72A6FFA5BE7A5151C5 /* Services.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Services.swift; sourceTree = "<group>"; };
+		BE1C04E90A967981D569BE39 /* 2802e496dad569e926d07a9c41c11277e93463 */ = {isa = PBXFileReference; path = 2802e496dad569e926d07a9c41c11277e93463; sourceTree = "<group>"; };
+		C18C16EA783DD919C9CD0820 /* main */ = {isa = PBXFileReference; path = main; sourceTree = "<group>"; };
+		C2BAEB0E545835FAE304AEFB /* pre-merge-commit.sample */ = {isa = PBXFileReference; path = "pre-merge-commit.sample"; sourceTree = "<group>"; };
+		C360ED8A951F5427D33D7E99 /* c38178c488bef8604350026e5653e4757b5ad5 */ = {isa = PBXFileReference; path = c38178c488bef8604350026e5653e4757b5ad5; sourceTree = "<group>"; };
+		C70EB88296D928A9262ABCFF /* 64a21a82f2b6c184b60b6b9d312903ea1f0ceb */ = {isa = PBXFileReference; path = 64a21a82f2b6c184b60b6b9d312903ea1f0ceb; sourceTree = "<group>"; };
+		C7DBF57BACD5E9469BF5D4C5 /* 84270fc703bd234161353093a1ca3b9ba1eb08 */ = {isa = PBXFileReference; path = 84270fc703bd234161353093a1ca3b9ba1eb08; sourceTree = "<group>"; };
+		C9A350BAD25106740D3ED379 /* edb671cdd6e1777c0c050f685db53f1e3b1121 */ = {isa = PBXFileReference; path = edb671cdd6e1777c0c050f685db53f1e3b1121; sourceTree = "<group>"; };
+		CAD8D532A59946C1233194F8 /* 23c3f05de01a76be6ce8e2dda5cfa3efa2e89e */ = {isa = PBXFileReference; path = 23c3f05de01a76be6ce8e2dda5cfa3efa2e89e; sourceTree = "<group>"; };
+		CCDCC8333704D5BB0CC647B9 /* 44eedd9d79694a4b24aa3268f907126d101161 */ = {isa = PBXFileReference; path = 44eedd9d79694a4b24aa3268f907126d101161; sourceTree = "<group>"; };
+		CDCD32B6FE00F8B03492E28B /* HEAD */ = {isa = PBXFileReference; path = HEAD; sourceTree = "<group>"; };
+		CE32E73857392F4DFA24347E /* 193dcd4b2c6579720e57031f004f4ef909f9f7 */ = {isa = PBXFileReference; path = 193dcd4b2c6579720e57031f004f4ef909f9f7; sourceTree = "<group>"; };
+		CF95E97AFFAD0AB7BCE67342 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		D12D665DBF34C36724E2FE4F /* 9434a6254f0e9651f402737811be6634a03e9c */ = {isa = PBXFileReference; path = 9434a6254f0e9651f402737811be6634a03e9c; sourceTree = "<group>"; };
+		D296D0B5AF1AB9F53FD4DC62 /* 28f3b5180ffb3e1cbf54d169027ad8a7b4ae62 */ = {isa = PBXFileReference; path = 28f3b5180ffb3e1cbf54d169027ad8a7b4ae62; sourceTree = "<group>"; };
+		D6B75F8FE2FC345189C1FDED /* 6235dcd19715b5889b067592da160b7da0ee44 */ = {isa = PBXFileReference; path = 6235dcd19715b5889b067592da160b7da0ee44; sourceTree = "<group>"; };
+		DACCA7C2B590B04FBDB05DD9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		DE062BEC4A7E988B46A82D5E /* 8f2260cb4aaec8e09efe04a4648b60db4a1d29 */ = {isa = PBXFileReference; path = 8f2260cb4aaec8e09efe04a4648b60db4a1d29; sourceTree = "<group>"; };
+		DE7B54FCBC938A3CC35D3430 /* 7ce960fc575efc95ac38e6beef151b3c707026 */ = {isa = PBXFileReference; path = 7ce960fc575efc95ac38e6beef151b3c707026; sourceTree = "<group>"; };
+		E162D3A8E5087309B9371909 /* exclude */ = {isa = PBXFileReference; path = exclude; sourceTree = "<group>"; };
+		E1C2E30E9390A7B455B78A46 /* project.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = project.yml; sourceTree = "<group>"; };
+		E301540D54FD1CBCE2FD676D /* 373602e2f26f0d0a64806c4dc8759fb1b98fa5 */ = {isa = PBXFileReference; path = 373602e2f26f0d0a64806c4dc8759fb1b98fa5; sourceTree = "<group>"; };
+		E5EEF538FBB072D333DBD0B2 /* 01928b5d058c492bb38e457763af3ded72290b */ = {isa = PBXFileReference; path = 01928b5d058c492bb38e457763af3ded72290b; sourceTree = "<group>"; };
+		E96F03ECA1751E001B2E74B4 /* de567202541c2b3abe4bfefede9bb304c2fa72 */ = {isa = PBXFileReference; path = de567202541c2b3abe4bfefede9bb304c2fa72; sourceTree = "<group>"; };
+		EB2AA6E46FDD51222A1EBDE4 /* pre-rebase.sample */ = {isa = PBXFileReference; path = "pre-rebase.sample"; sourceTree = "<group>"; };
+		EB76E2B6C8FA9A450D555806 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
+		ED045858658DE383AA50F571 /* update.sample */ = {isa = PBXFileReference; path = update.sample; sourceTree = "<group>"; };
+		EE363CB5E2CFEFEFB6695A66 /* 9e4de2af142a3662de99cd8c23a9b406560c2d */ = {isa = PBXFileReference; path = 9e4de2af142a3662de99cd8c23a9b406560c2d; sourceTree = "<group>"; };
+		EF0D09C7E3EBFB7DBEDDB6C0 /* ed97ea03f38f8e7dd8e9ae6794923082c154a9 */ = {isa = PBXFileReference; path = ed97ea03f38f8e7dd8e9ae6794923082c154a9; sourceTree = "<group>"; };
+		F5438DEB1E67F8507F66F67B /* prepare-commit-msg.sample */ = {isa = PBXFileReference; path = "prepare-commit-msg.sample"; sourceTree = "<group>"; };
+		F559C48055964F00D4009420 /* 57d030854ef9ca7a8631e404f93805f1b05b83 */ = {isa = PBXFileReference; path = 57d030854ef9ca7a8631e404f93805f1b05b83; sourceTree = "<group>"; };
+		F5FCD977DBD0B96ECC0A0A35 /* 04beda8f6061dddefc74c325dba37bc5fdce4f */ = {isa = PBXFileReference; path = 04beda8f6061dddefc74c325dba37bc5fdce4f; sourceTree = "<group>"; };
+		F841588E0788A73C0C86E831 /* 6c6720afa7babf233b28810e7a851b45bead6d */ = {isa = PBXFileReference; path = 6c6720afa7babf233b28810e7a851b45bead6d; sourceTree = "<group>"; };
+		FAA4CF51C36C7CF3EE50DB3C /* COMMIT_EDITMSG */ = {isa = PBXFileReference; path = COMMIT_EDITMSG; sourceTree = "<group>"; };
+		FAE16975BC2879CCB31E82EA /* BetterEconWidget.appex */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = "wrapper.app-extension"; path = BetterEconWidget.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		FC77A60C58D584079480C243 /* 1f37389df0b4ea0aeb95bb98488d5a093fdcb1 */ = {isa = PBXFileReference; path = 1f37389df0b4ea0aeb95bb98488d5a093fdcb1; sourceTree = "<group>"; };
+		FCA1EBCAB4D45CBABA2DEE8E /* pre-commit.sample */ = {isa = PBXFileReference; path = "pre-commit.sample"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		001FF333DD403DA42B8C2925 /* refs */ = {
+			isa = PBXGroup;
+			children = (
+				9CCCD5E94D65806BD8CC96D8 /* heads */,
+				7EBEA180FCFEF6B6E1149C40 /* remotes */,
+			);
+			path = refs;
+			sourceTree = "<group>";
+		};
+		00319CEF2E85E768C7959AF9 /* 69 */ = {
+			isa = PBXGroup;
+			children = (
+				139E1A2A17F27D483A8E3E8F /* 29faaca7d36abe75303d98380ca0d7ee46fb1b */,
+			);
+			path = 69;
+			sourceTree = "<group>";
+		};
+		00F916F4BE2527C3CC71798F /* 66 */ = {
+			isa = PBXGroup;
+			children = (
+				ADCC1DD5A30482EF89F745C2 /* c9bbbdbee75cc7d165f60aff3dd36290b903ca */,
+			);
+			path = 66;
+			sourceTree = "<group>";
+		};
+		0510E99C267F1A96907243AF /* 97 */ = {
+			isa = PBXGroup;
+			children = (
+				744BA39483FD00A4820E92F4 /* a30733ca59d9e5904606a909e45ba948564d27 */,
+			);
+			path = 97;
+			sourceTree = "<group>";
+		};
+		051EFF83FB7B1A81EF5F8CE6 /* 52 */ = {
+			isa = PBXGroup;
+			children = (
+				E301540D54FD1CBCE2FD676D /* 373602e2f26f0d0a64806c4dc8759fb1b98fa5 */,
+			);
+			path = 52;
+			sourceTree = "<group>";
+		};
+		0BF27A2D74E76842D7F14F63 /* d6 */ = {
+			isa = PBXGroup;
+			children = (
+				016A3BA9DB514D24BD536159 /* 548bc84f37984f86d5826d886a889dbd52e8c0 */,
+			);
+			path = d6;
+			sourceTree = "<group>";
+		};
+		0C6898C24A46BCA4DB7F75A5 /* 73 */ = {
+			isa = PBXGroup;
+			children = (
+				622F52359A07D3E3DBB1B16C /* c00596a7fca3f3d4bdd64053b69d86745f9e10 */,
+			);
+			path = 73;
+			sourceTree = "<group>";
+		};
+		0CE68CB5FA27D0CE74F12D29 /* 0e */ = {
+			isa = PBXGroup;
+			children = (
+				CE32E73857392F4DFA24347E /* 193dcd4b2c6579720e57031f004f4ef909f9f7 */,
+			);
+			path = 0e;
+			sourceTree = "<group>";
+		};
+		15E045246421C6D6C843FB38 /* 6e */ = {
+			isa = PBXGroup;
+			children = (
+				68A479C02F545B8599DA1D8E /* f7c95e88c3d989489edc16c6a6c2c67ecaf54b */,
+			);
+			path = 6e;
+			sourceTree = "<group>";
+		};
+		1AE7476F2BB079E9664BA71C /* d8 */ = {
+			isa = PBXGroup;
+			children = (
+				C360ED8A951F5427D33D7E99 /* c38178c488bef8604350026e5653e4757b5ad5 */,
+			);
+			path = d8;
+			sourceTree = "<group>";
+		};
+		2201F6A9D638FFF09521362B /* d9 */ = {
+			isa = PBXGroup;
+			children = (
+				9024F2595C473BCC64CB1032 /* c19cc17a1d6452956495c8f392c3673f08a9eb */,
+			);
+			path = d9;
+			sourceTree = "<group>";
+		};
+		2587D2FC76A13AC2EB06BD29 /* 77 */ = {
+			isa = PBXGroup;
+			children = (
+				1FEC2455A991A9325F304E47 /* 841f0458e532443e8e2765010c5c6332778677 */,
+			);
+			path = 77;
+			sourceTree = "<group>";
+		};
+		38E8AB672283142F000E9556 /* c8 */ = {
+			isa = PBXGroup;
+			children = (
+				819F6FF008D0D106504D2F2C /* 5a57b76ee56d93dad1579d85c0677eb809d7c0 */,
+			);
+			path = c8;
+			sourceTree = "<group>";
+		};
+		3AC9F86DA5735494B2A09A1E /* 7b */ = {
+			isa = PBXGroup;
+			children = (
+				9A1B3AFCBA8E1B5C10F63BFA /* d923110f8f83dbd1f3f5937fa1edcf498c4c7c */,
+			);
+			path = 7b;
+			sourceTree = "<group>";
+		};
+		3F87F9AC13ABD8114F56E248 /* 43 */ = {
+			isa = PBXGroup;
+			children = (
+				CAD8D532A59946C1233194F8 /* 23c3f05de01a76be6ce8e2dda5cfa3efa2e89e */,
+			);
+			path = 43;
+			sourceTree = "<group>";
+		};
+		41E98033C9A8AEFF511EBAF6 /* 8d */ = {
+			isa = PBXGroup;
+			children = (
+				DE7B54FCBC938A3CC35D3430 /* 7ce960fc575efc95ac38e6beef151b3c707026 */,
+			);
+			path = 8d;
+			sourceTree = "<group>";
+		};
+		4677D3E33C6ADBD1277E694C /* 2b */ = {
+			isa = PBXGroup;
+			children = (
+				2479DA9E05BBE419324D6954 /* 88b7c818dbb3c1cc4aee99099b631701364794 */,
+				7F18BB1C06F991EEC07A5E34 /* a87ab7d5333300acb33d08e791d55522845424 */,
+			);
+			path = 2b;
+			sourceTree = "<group>";
+		};
+		46EA2234E63DA48928CFF28B /* 27 */ = {
+			isa = PBXGroup;
+			children = (
+				80F5378ED20C4DD80278567A /* 7450a2ffd43b1dfc10351eb6d263b1b517d9c7 */,
+			);
+			path = 27;
+			sourceTree = "<group>";
+		};
+		4C29DE5C1606B3414C74E421 /* 7a */ = {
+			isa = PBXGroup;
+			children = (
+				8B4ECF5BA100EF88A7662DA2 /* f5654bc37db99c0c29ac4c087ab6c9030ac614 */,
+			);
+			path = 7a;
+			sourceTree = "<group>";
+		};
+		518449156FEFC8888958F6E2 /* ae */ = {
+			isa = PBXGroup;
+			children = (
+				619D37B0225FB22D36FA7B93 /* 2f04422b6165930d5b0d6d5813ffdbb49af374 */,
+				A72C889AD482FCC12DC8837C /* ea325123befc5d5637da2dcd2a939ef5f8bfae */,
+				27490ABD74BA2F332C6C4768 /* f3805ffbeea94333589c0bf402785d887cdeb6 */,
+			);
+			path = ae;
+			sourceTree = "<group>";
+		};
+		52886B81DCD88A4313A27235 /* 59 */ = {
+			isa = PBXGroup;
+			children = (
+				081BA7CF7C019C5258071C7D /* 9a3ccdc144aca24a6bc6135118ee687026735c */,
+			);
+			path = 59;
+			sourceTree = "<group>";
+		};
+		536F7DEFE6C1423D37AF2514 /* 94 */ = {
+			isa = PBXGroup;
+			children = (
+				064985EBD66011FC0EF3ACA6 /* 918de803f05dfc40f78ea820b480fe801abf23 */,
+			);
+			path = 94;
+			sourceTree = "<group>";
+		};
+		562709327F1311E9604DC70D /* fc */ = {
+			isa = PBXGroup;
+			children = (
+				C7DBF57BACD5E9469BF5D4C5 /* 84270fc703bd234161353093a1ca3b9ba1eb08 */,
+			);
+			path = fc;
+			sourceTree = "<group>";
+		};
+		570BB4CEC672DC215DB971D0 /* origin */ = {
+			isa = PBXGroup;
+			children = (
+				3B9C17AE2DAEEDD0EF49CA7D /* HEAD */,
+				C18C16EA783DD919C9CD0820 /* main */,
+			);
+			path = origin;
+			sourceTree = "<group>";
+		};
+		57A9407B0E9286B4D1B3CA76 /* cd */ = {
+			isa = PBXGroup;
+			children = (
+				0A7241C6F2A6C9B4568F092F /* 7bb279e1785fa87a4bd61c38719fadf1f76b37 */,
+			);
+			path = cd;
+			sourceTree = "<group>";
+		};
+		5D6E4CC4B675E609FB6BCF83 /* e9 */ = {
+			isa = PBXGroup;
+			children = (
+				F841588E0788A73C0C86E831 /* 6c6720afa7babf233b28810e7a851b45bead6d */,
+			);
+			path = e9;
+			sourceTree = "<group>";
+		};
+		65280860790A2CAB67A2D64D /* Better-FRED */ = {
+			isa = PBXGroup;
+			children = (
+				A6E31C48CFF7D4CE239DBD59 /* .env */,
+				25F74D4F877D50BFA7AC4850 /* .gitignore */,
+				DACCA7C2B590B04FBDB05DD9 /* Assets.xcassets */,
+				37D46774160C6C051647DA5C /* BetterEconApp.swift */,
+				4C7E293664635D65FBE4E5C9 /* ChartComponents.swift */,
+				295F24F00AB3D51F05851AB7 /* CompareView.swift */,
+				406D5D32A383342C6099ACAD /* DesignSystem.swift */,
+				6C0A60537D78347782F76F6C /* FullscreenChartView.swift */,
+				08769B9EC9848B1A9C0C8C01 /* HistoricalDatasets.swift */,
+				6196A6EC894F84ED94BEB9F9 /* Info.plist */,
+				BA97BE3EAC17CBEE0F340B8D /* KeychainHelper.swift */,
+				7A2ABCF58083220E656866A4 /* Models.swift */,
+				91609BD7A9A29D6AB8B3E77C /* PRIVACY_POLICY.md */,
+				88D72C51CBE99658EAD5634F /* PrivacyInfo.xcprivacy */,
+				E1C2E30E9390A7B455B78A46 /* project.yml */,
+				CF95E97AFFAD0AB7BCE67342 /* README.md */,
+				EB76E2B6C8FA9A450D555806 /* RootView.swift */,
+				41B344EF441B39FFAD25F3B2 /* SeriesDetailView.swift */,
+				A13B3CD641B340FBB731B1A9 /* SeriesTableView.swift */,
+				BBFEAB72A6FFA5BE7A5151C5 /* Services.swift */,
+				75665C311857740290AC5EB3 /* SettingsView.swift */,
+				9B1674E20FD77971C32FD6DE /* .git */,
+			);
+			name = "Better-FRED";
+			path = .;
+			sourceTree = "<group>";
+		};
+		6C27A76861944BC101C46C64 /* c1 */ = {
+			isa = PBXGroup;
+			children = (
+				0FE4767DC6E61308F9F31651 /* 527edbc10a4425a6882a96dcd8667fc6d08bd2 */,
+			);
+			path = c1;
+			sourceTree = "<group>";
+		};
+		6D7C1515514731D35FFE96DA /* hooks */ = {
+			isa = PBXGroup;
+			children = (
+				399683D493D992798F98C5EA /* applypatch-msg.sample */,
+				2D1B7D5539FA10514DE5C3D8 /* commit-msg.sample */,
+				382208948092FE0F4B348757 /* fsmonitor-watchman.sample */,
+				646E5091B58BC16B6CFA5497 /* post-update.sample */,
+				A36B0BA56A523C5ED8ECFDEF /* pre-applypatch.sample */,
+				FCA1EBCAB4D45CBABA2DEE8E /* pre-commit.sample */,
+				C2BAEB0E545835FAE304AEFB /* pre-merge-commit.sample */,
+				51B6607D5E2944FD92FDCAE5 /* pre-push.sample */,
+				EB2AA6E46FDD51222A1EBDE4 /* pre-rebase.sample */,
+				58A1148BC18755F8045ABD4E /* pre-receive.sample */,
+				F5438DEB1E67F8507F66F67B /* prepare-commit-msg.sample */,
+				4EFDE7C43D0ED5112E7E09CB /* push-to-checkout.sample */,
+				50C1B163553BBA487122D479 /* sendemail-validate.sample */,
+				ED045858658DE383AA50F571 /* update.sample */,
+			);
+			path = hooks;
+			sourceTree = "<group>";
+		};
+		7EBEA180FCFEF6B6E1149C40 /* remotes */ = {
+			isa = PBXGroup;
+			children = (
+				9D73DA159221606CB5795B31 /* origin */,
+			);
+			path = remotes;
+			sourceTree = "<group>";
+		};
+		7FBB62716F7D4B6993022DE0 /* 39 */ = {
+			isa = PBXGroup;
+			children = (
+				5C03FDFF804D636828D23ACA /* 748da3a08f6d907e8477f9cd72e4358d21b6f3 */,
+			);
+			path = 39;
+			sourceTree = "<group>";
+		};
+		8297E1ED705AA785AA5AE47A /* 2f */ = {
+			isa = PBXGroup;
+			children = (
+				EE363CB5E2CFEFEFB6695A66 /* 9e4de2af142a3662de99cd8c23a9b406560c2d */,
+			);
+			path = 2f;
+			sourceTree = "<group>";
+		};
+		82AF5B1D1E7768206E61290C /* a9 */ = {
+			isa = PBXGroup;
+			children = (
+				36288C6E14AE39A7D75F01EA /* b8ac300f89ef6ffbd713da4a4ed03cad353367 */,
+			);
+			path = a9;
+			sourceTree = "<group>";
+		};
+		8358B66D6FF864C7E5B8314F /* 8f */ = {
+			isa = PBXGroup;
+			children = (
+				E5EEF538FBB072D333DBD0B2 /* 01928b5d058c492bb38e457763af3ded72290b */,
+			);
+			path = 8f;
+			sourceTree = "<group>";
+		};
+		84494DACB52E62D496E98836 /* logs */ = {
+			isa = PBXGroup;
+			children = (
+				27E93CFBE41E79423106C44E /* HEAD */,
+				9A91E0BE14CC2C9F8728FB82 /* refs */,
+			);
+			path = logs;
+			sourceTree = "<group>";
+		};
+		8682DFEFF86515634A21A70B /* heads */ = {
+			isa = PBXGroup;
+			children = (
+				4D0F50A74F5791359BB45693 /* main */,
+			);
+			path = heads;
+			sourceTree = "<group>";
+		};
+		89892B51BEEDBC991307C25E /* dc */ = {
+			isa = PBXGroup;
+			children = (
+				2EF5F310B5A5A1B9199F12C4 /* e78d959339587fd1e3ca5065020fd2b6723888 */,
+			);
+			path = dc;
+			sourceTree = "<group>";
+		};
+		90382D6461A0961DF0A43D75 /* 5d */ = {
+			isa = PBXGroup;
+			children = (
+				3BE4DDA73D6ECA6F7CF51E22 /* 636ae34224e9e7eba503ca9d69430e20d8dfc1 */,
+			);
+			path = 5d;
+			sourceTree = "<group>";
+		};
+		9106B8DA35D2BC806A524C39 /* 89 */ = {
+			isa = PBXGroup;
+			children = (
+				639956C476747DADFCE6F4E7 /* bbc6f15e9151a8ba9ab206f1944c7b9c1fbc9d */,
+			);
+			path = 89;
+			sourceTree = "<group>";
+		};
+		915278E9CE5B6F8EDAAABB37 /* f2 */ = {
+			isa = PBXGroup;
+			children = (
+				243DD68AEC43FA1B644F273E /* 2e10cde3659e827af3a74cdef013e7ca368a3e */,
+				D296D0B5AF1AB9F53FD4DC62 /* 28f3b5180ffb3e1cbf54d169027ad8a7b4ae62 */,
+				D6B75F8FE2FC345189C1FDED /* 6235dcd19715b5889b067592da160b7da0ee44 */,
+			);
+			path = f2;
+			sourceTree = "<group>";
+		};
+		929A257D2754E10D81E72FD8 /* 2c */ = {
+			isa = PBXGroup;
+			children = (
+				082C75D5866E7D3E5BEA54FB /* 79ff800df1eb1aeab0939a1e858c42627e72f8 */,
+			);
+			path = 2c;
+			sourceTree = "<group>";
+		};
+		93EB7ED62223665F6C370B93 /* 32 */ = {
+			isa = PBXGroup;
+			children = (
+				9FB526D6AFC6FE2ABF92B314 /* d7d86293fa09cbc98a44bd5b76b27968f3ffc0 */,
+			);
+			path = 32;
+			sourceTree = "<group>";
+		};
+		966A83E1B9E5ECF30EC04EA0 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				98DFDF04F704F5E6CCD9FFAD /* BetterEcon.app */,
+				FAE16975BC2879CCB31E82EA /* BetterEconWidget.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		99589C4FF15A2550ED9F24FD /* a1 */ = {
+			isa = PBXGroup;
+			children = (
+				0E96F5426FA5D06D53E84610 /* 6f65d35650d32a61551249bdc6174a81edc062 */,
+			);
+			path = a1;
+			sourceTree = "<group>";
+		};
+		9A91E0BE14CC2C9F8728FB82 /* refs */ = {
+			isa = PBXGroup;
+			children = (
+				8682DFEFF86515634A21A70B /* heads */,
+				DAB4A1A44FE08D849E74EE40 /* remotes */,
+			);
+			path = refs;
+			sourceTree = "<group>";
+		};
+		9B1674E20FD77971C32FD6DE /* .git */ = {
+			isa = PBXGroup;
+			children = (
+				FAA4CF51C36C7CF3EE50DB3C /* COMMIT_EDITMSG */,
+				49FF540314BA3B4A2A1E5788 /* config */,
+				9E01D7B218957FB614FE8CBC /* description */,
+				10B46EEBE6ECC0EB07EF8C4A /* FETCH_HEAD */,
+				390D8A66118BC8CDCF2D089D /* HEAD */,
+				6AAE3A0F8CFE1F9135FBE244 /* index */,
+				9C4C78026EC6345DC177FB73 /* ORIG_HEAD */,
+				6D7C1515514731D35FFE96DA /* hooks */,
+				EEC8FBD1B2A1E6705A9D1865 /* info */,
+				84494DACB52E62D496E98836 /* logs */,
+				E6C49F4412E0B38F97B23AF2 /* objects */,
+				001FF333DD403DA42B8C2925 /* refs */,
+			);
+			path = .git;
+			sourceTree = "<group>";
+		};
+		9C4B69E2040999B66A635435 /* d5 */ = {
+			isa = PBXGroup;
+			children = (
+				7B1F316417AF2DF9B94B32FC /* 04984efb20237516c6bbf4347bf86aa5664573 */,
+			);
+			path = d5;
+			sourceTree = "<group>";
+		};
+		9CCCD5E94D65806BD8CC96D8 /* heads */ = {
+			isa = PBXGroup;
+			children = (
+				785884D9BD3E9E9C2AC8DE37 /* main */,
+			);
+			path = heads;
+			sourceTree = "<group>";
+		};
+		9D73DA159221606CB5795B31 /* origin */ = {
+			isa = PBXGroup;
+			children = (
+				CDCD32B6FE00F8B03492E28B /* HEAD */,
+				566BF959667BA18929DCABA6 /* main */,
+			);
+			path = origin;
+			sourceTree = "<group>";
+		};
+		A5B53C781F10FFCA1A9BE3C2 /* bd */ = {
+			isa = PBXGroup;
+			children = (
+				9C78EDE3DA03FFF1B2992723 /* a0fdc57d1916a970783656c41303143272c7df */,
+			);
+			path = bd;
+			sourceTree = "<group>";
+		};
+		A85AF51704B9ED615193384E /* 9e */ = {
+			isa = PBXGroup;
+			children = (
+				9D4461B0AD44071CE0E27D56 /* 7c8ab2a44c660aa92be5847183f48b6e1421a3 */,
+			);
+			path = 9e;
+			sourceTree = "<group>";
+		};
+		ACD0D8173A6F5A2420848D11 /* BetterEconWidget */ = {
+			isa = PBXGroup;
+			children = (
+				32DB90AA47ACE9BA4AD3DD02 /* BetterEconWidget.swift */,
+				0A57717992C39C5DAA8E6600 /* Info.plist */,
+			);
+			path = BetterEconWidget;
+			sourceTree = "<group>";
+		};
+		B1AFBF3A75EB2F05BE96788A /* 4b */ = {
+			isa = PBXGroup;
+			children = (
+				490FE997B3C3215F0D3098AF /* 3ea69184e7065728d141743d2fe3e429c7c9f3 */,
+			);
+			path = 4b;
+			sourceTree = "<group>";
+		};
+		B202CDE5F73C243EDAED8609 /* 2e */ = {
+			isa = PBXGroup;
+			children = (
+				255F5115D771F7E0C7BD908F /* a86d73e7c3a4cc082ae1c743ea7780eaea2aa3 */,
+			);
+			path = 2e;
+			sourceTree = "<group>";
+		};
+		BBD0BEAAB207900470F59B4E /* 23 */ = {
+			isa = PBXGroup;
+			children = (
+				1F23B5755B0711EECA19DF85 /* 43f8117522ee9e5fccb4334c8772ea39339bd6 */,
+			);
+			path = 23;
+			sourceTree = "<group>";
+		};
+		BE89F1AACBA48BDD01949D76 /* 7f */ = {
+			isa = PBXGroup;
+			children = (
+				EF0D09C7E3EBFB7DBEDDB6C0 /* ed97ea03f38f8e7dd8e9ae6794923082c154a9 */,
+			);
+			path = 7f;
+			sourceTree = "<group>";
+		};
+		C2BBB0046C23321509DF4FC3 /* d0 */ = {
+			isa = PBXGroup;
+			children = (
+				0D08DF57E02393E6DEF3CF96 /* d716d11bf70794efd203dc7139e581517c204a */,
+			);
+			path = d0;
+			sourceTree = "<group>";
+		};
+		C7C24F4C2BE50453D53E61E7 /* 25 */ = {
+			isa = PBXGroup;
+			children = (
+				A316AFB73FDA3A3B1C362900 /* 65259d04281ff3fe06bea78156953d0cc43f7b */,
+			);
+			path = 25;
+			sourceTree = "<group>";
+		};
+		C8333018AA67B82F5E017B0D /* 83 */ = {
+			isa = PBXGroup;
+			children = (
+				F559C48055964F00D4009420 /* 57d030854ef9ca7a8631e404f93805f1b05b83 */,
+			);
+			path = 83;
+			sourceTree = "<group>";
+		};
+		CD0B00E7D980D3F6CE2E73A3 /* 35 */ = {
+			isa = PBXGroup;
+			children = (
+				FC77A60C58D584079480C243 /* 1f37389df0b4ea0aeb95bb98488d5a093fdcb1 */,
+				793CCC31F1821F534C68DF83 /* 4255c623f5d715fa9664f11bf477b399d15360 */,
+			);
+			path = 35;
+			sourceTree = "<group>";
+		};
+		CFAB8920DDE4CDDFF5122650 = {
+			isa = PBXGroup;
+			children = (
+				9B1674E20FD77971C32FD6DE /* .git */,
+				65280860790A2CAB67A2D64D /* Better-FRED */,
+				ACD0D8173A6F5A2420848D11 /* BetterEconWidget */,
+				966A83E1B9E5ECF30EC04EA0 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		D0E273EDDACB6DD7EB6BDB8B /* 5b */ = {
+			isa = PBXGroup;
+			children = (
+				DE062BEC4A7E988B46A82D5E /* 8f2260cb4aaec8e09efe04a4648b60db4a1d29 */,
+				CCDCC8333704D5BB0CC647B9 /* 44eedd9d79694a4b24aa3268f907126d101161 */,
+			);
+			path = 5b;
+			sourceTree = "<group>";
+		};
+		DAB4A1A44FE08D849E74EE40 /* remotes */ = {
+			isa = PBXGroup;
+			children = (
+				570BB4CEC672DC215DB971D0 /* origin */,
+			);
+			path = remotes;
+			sourceTree = "<group>";
+		};
+		DDC00F0417AE448C9AE04179 /* 0c */ = {
+			isa = PBXGroup;
+			children = (
+				434E4D04A94B066F9E49271A /* 432fb3f54a6196e1cf08a596d3395054e027fc */,
+			);
+			path = 0c;
+			sourceTree = "<group>";
+		};
+		E146F396829D7D3F8E7ECF59 /* 57 */ = {
+			isa = PBXGroup;
+			children = (
+				F5FCD977DBD0B96ECC0A0A35 /* 04beda8f6061dddefc74c325dba37bc5fdce4f */,
+			);
+			path = 57;
+			sourceTree = "<group>";
+		};
+		E6C49F4412E0B38F97B23AF2 /* objects */ = {
+			isa = PBXGroup;
+			children = (
+				DDC00F0417AE448C9AE04179 /* 0c */,
+				0CE68CB5FA27D0CE74F12D29 /* 0e */,
+				F1A5DCD9FEBA6967C3CA026D /* 1e */,
+				4677D3E33C6ADBD1277E694C /* 2b */,
+				929A257D2754E10D81E72FD8 /* 2c */,
+				B202CDE5F73C243EDAED8609 /* 2e */,
+				8297E1ED705AA785AA5AE47A /* 2f */,
+				B1AFBF3A75EB2F05BE96788A /* 4b */,
+				D0E273EDDACB6DD7EB6BDB8B /* 5b */,
+				90382D6461A0961DF0A43D75 /* 5d */,
+				15E045246421C6D6C843FB38 /* 6e */,
+				FA01051D8394879EAA657B1A /* 6f */,
+				4C29DE5C1606B3414C74E421 /* 7a */,
+				3AC9F86DA5735494B2A09A1E /* 7b */,
+				BE89F1AACBA48BDD01949D76 /* 7f */,
+				41E98033C9A8AEFF511EBAF6 /* 8d */,
+				8358B66D6FF864C7E5B8314F /* 8f */,
+				A85AF51704B9ED615193384E /* 9e */,
+				EEF8134CE95C7D026C543EE6 /* 22 */,
+				BBD0BEAAB207900470F59B4E /* 23 */,
+				C7C24F4C2BE50453D53E61E7 /* 25 */,
+				46EA2234E63DA48928CFF28B /* 27 */,
+				93EB7ED62223665F6C370B93 /* 32 */,
+				CD0B00E7D980D3F6CE2E73A3 /* 35 */,
+				7FBB62716F7D4B6993022DE0 /* 39 */,
+				3F87F9AC13ABD8114F56E248 /* 43 */,
+				051EFF83FB7B1A81EF5F8CE6 /* 52 */,
+				FFED33ADF341F6D354021463 /* 56 */,
+				E146F396829D7D3F8E7ECF59 /* 57 */,
+				52886B81DCD88A4313A27235 /* 59 */,
+				00F916F4BE2527C3CC71798F /* 66 */,
+				00319CEF2E85E768C7959AF9 /* 69 */,
+				0C6898C24A46BCA4DB7F75A5 /* 73 */,
+				2587D2FC76A13AC2EB06BD29 /* 77 */,
+				FFC51549DF979E242ECC88DB /* 82 */,
+				C8333018AA67B82F5E017B0D /* 83 */,
+				9106B8DA35D2BC806A524C39 /* 89 */,
+				FD1752475EE2A34E1CDE9253 /* 91 */,
+				536F7DEFE6C1423D37AF2514 /* 94 */,
+				0510E99C267F1A96907243AF /* 97 */,
+				99589C4FF15A2550ED9F24FD /* a1 */,
+				82AF5B1D1E7768206E61290C /* a9 */,
+				518449156FEFC8888958F6E2 /* ae */,
+				F667515D4719D1DB8B759E8B /* b1 */,
+				A5B53C781F10FFCA1A9BE3C2 /* bd */,
+				6C27A76861944BC101C46C64 /* c1 */,
+				38E8AB672283142F000E9556 /* c8 */,
+				57A9407B0E9286B4D1B3CA76 /* cd */,
+				C2BBB0046C23321509DF4FC3 /* d0 */,
+				9C4B69E2040999B66A635435 /* d5 */,
+				0BF27A2D74E76842D7F14F63 /* d6 */,
+				1AE7476F2BB079E9664BA71C /* d8 */,
+				2201F6A9D638FFF09521362B /* d9 */,
+				89892B51BEEDBC991307C25E /* dc */,
+				EFBF7EDB342C95A8824AE9A3 /* df */,
+				5D6E4CC4B675E609FB6BCF83 /* e9 */,
+				915278E9CE5B6F8EDAAABB37 /* f2 */,
+				F139333B16224E7144EA1500 /* f9 */,
+				562709327F1311E9604DC70D /* fc */,
+				EC5013D4F47DAE42A6DD2A37 /* ff */,
+			);
+			path = objects;
+			sourceTree = "<group>";
+		};
+		EC5013D4F47DAE42A6DD2A37 /* ff */ = {
+			isa = PBXGroup;
+			children = (
+				8926B3AAF29E8381F4145B1D /* 9b0550ee8469530ad961dfb2d0ed3b6e220880 */,
+			);
+			path = ff;
+			sourceTree = "<group>";
+		};
+		EEC8FBD1B2A1E6705A9D1865 /* info */ = {
+			isa = PBXGroup;
+			children = (
+				E162D3A8E5087309B9371909 /* exclude */,
+			);
+			path = info;
+			sourceTree = "<group>";
+		};
+		EEF8134CE95C7D026C543EE6 /* 22 */ = {
+			isa = PBXGroup;
+			children = (
+				C70EB88296D928A9262ABCFF /* 64a21a82f2b6c184b60b6b9d312903ea1f0ceb */,
+			);
+			path = 22;
+			sourceTree = "<group>";
+		};
+		EFBF7EDB342C95A8824AE9A3 /* df */ = {
+			isa = PBXGroup;
+			children = (
+				E96F03ECA1751E001B2E74B4 /* de567202541c2b3abe4bfefede9bb304c2fa72 */,
+			);
+			path = df;
+			sourceTree = "<group>";
+		};
+		F139333B16224E7144EA1500 /* f9 */ = {
+			isa = PBXGroup;
+			children = (
+				BE1C04E90A967981D569BE39 /* 2802e496dad569e926d07a9c41c11277e93463 */,
+			);
+			path = f9;
+			sourceTree = "<group>";
+		};
+		F1A5DCD9FEBA6967C3CA026D /* 1e */ = {
+			isa = PBXGroup;
+			children = (
+				266BB107BA9FA672F9835F9D /* 1006f1844dd1d3de55cae1f066d02af31d511b */,
+			);
+			path = 1e;
+			sourceTree = "<group>";
+		};
+		F667515D4719D1DB8B759E8B /* b1 */ = {
+			isa = PBXGroup;
+			children = (
+				AF58527486CDDE373D7AAD80 /* 2f1acb4eb7a50e5734273e1bfa1ca61096b7b1 */,
+			);
+			path = b1;
+			sourceTree = "<group>";
+		};
+		FA01051D8394879EAA657B1A /* 6f */ = {
+			isa = PBXGroup;
+			children = (
+				C9A350BAD25106740D3ED379 /* edb671cdd6e1777c0c050f685db53f1e3b1121 */,
+			);
+			path = 6f;
+			sourceTree = "<group>";
+		};
+		FD1752475EE2A34E1CDE9253 /* 91 */ = {
+			isa = PBXGroup;
+			children = (
+				D12D665DBF34C36724E2FE4F /* 9434a6254f0e9651f402737811be6634a03e9c */,
+			);
+			path = 91;
+			sourceTree = "<group>";
+		};
+		FFC51549DF979E242ECC88DB /* 82 */ = {
+			isa = PBXGroup;
+			children = (
+				993B1172D0BB7D987CF70173 /* c93190db04cea7a7585d0b05660dc60670cd5b */,
+			);
+			path = 82;
+			sourceTree = "<group>";
+		};
+		FFED33ADF341F6D354021463 /* 56 */ = {
+			isa = PBXGroup;
+			children = (
+				16B76800A056B87813B7D62B /* 10cff74b47fbb5dd76eefdf63c81941f7a1618 */,
+			);
+			path = 56;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		0900596DACDAF75BE112C2C9 /* BetterEconWidget */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DB68E5783F33718B928D79E3 /* Build configuration list for PBXNativeTarget "BetterEconWidget" */;
+			buildPhases = (
+				7587C631D3518F3089CCA5E3 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BetterEconWidget;
+			packageProductDependencies = (
+			);
+			productName = BetterEconWidget;
+			productReference = FAE16975BC2879CCB31E82EA /* BetterEconWidget.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+		8C55BB3058AA1E48A7D16D56 /* BetterEcon */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D33DD2B14448928C12D4362F /* Build configuration list for PBXNativeTarget "BetterEcon" */;
+			buildPhases = (
+				F81A379DD8FC8931E99D8CA9 /* Sources */,
+				81AC3C3E384517937E95E691 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BetterEcon;
+			packageProductDependencies = (
+			);
+			productName = BetterEcon;
+			productReference = 98DFDF04F704F5E6CCD9FFAD /* BetterEcon.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		41F8D57AE16910EFD78D4D3E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+				};
+			};
+			buildConfigurationList = B485F1115637847011595847 /* Build configuration list for PBXProject "BetterEcon" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = CFAB8920DDE4CDDFF5122650;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 966A83E1B9E5ECF30EC04EA0 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8C55BB3058AA1E48A7D16D56 /* BetterEcon */,
+				0900596DACDAF75BE112C2C9 /* BetterEconWidget */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		81AC3C3E384517937E95E691 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1C8C027F3D767334910E0845 /* Assets.xcassets in Resources */,
+				64D757A59955B458BE2525C3 /* PRIVACY_POLICY.md in Resources */,
+				EF25ABB93236DD74A8EF0D69 /* PrivacyInfo.xcprivacy in Resources */,
+				9EAA29236D2656817C06478B /* README.md in Resources */,
+				6E9791E5FE340DEA4C691142 /* applypatch-msg.sample in Resources */,
+				58450480CC09231C6F756C09 /* commit-msg.sample in Resources */,
+				C5F8B6D162CB6256B24EF54A /* fsmonitor-watchman.sample in Resources */,
+				2211324FF49425780CCD1F82 /* post-update.sample in Resources */,
+				0CF59F15EC852EC91E3EEEB5 /* pre-applypatch.sample in Resources */,
+				67D5D95604818D14DBA3D825 /* pre-commit.sample in Resources */,
+				74772290C5D25369D8500C29 /* pre-merge-commit.sample in Resources */,
+				7EBE6F6C05A32E690F58D6DA /* pre-push.sample in Resources */,
+				F72D0F38FBD09EE747C3A650 /* pre-rebase.sample in Resources */,
+				71AA601CE6BD103605051DCB /* pre-receive.sample in Resources */,
+				6DBAE31FD62D0B103DD792DD /* prepare-commit-msg.sample in Resources */,
+				6E2DD28C027EE38DEF1A67EC /* project.yml in Resources */,
+				17E2A7773CF88F88B5D858C2 /* push-to-checkout.sample in Resources */,
+				BCA797A0332A7E21CE3440B6 /* sendemail-validate.sample in Resources */,
+				E363496E1354B8426179C11E /* update.sample in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		7587C631D3518F3089CCA5E3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4813F316F71196079CDFC57F /* BetterEconWidget.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F81A379DD8FC8931E99D8CA9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B261218F937892B731223374 /* BetterEconApp.swift in Sources */,
+				D20DFE82F71CAFAD499C9449 /* ChartComponents.swift in Sources */,
+				6C98442BA8E218AE88493DD4 /* CompareView.swift in Sources */,
+				F0C4044621E1EAF35D8B7996 /* DesignSystem.swift in Sources */,
+				A3ADB6F1DB452AE7B2B308A6 /* FullscreenChartView.swift in Sources */,
+				4FC79AB991F2480295524D8B /* HistoricalDatasets.swift in Sources */,
+				07E3C092C9A81345445C5EF6 /* KeychainHelper.swift in Sources */,
+				B38D6206CB65AA6BFBCB035D /* Models.swift in Sources */,
+				ADF8D0A7515E5C33B1E7C77B /* RootView.swift in Sources */,
+				97ADA5A078D2419B3C27C3ED /* SeriesDetailView.swift in Sources */,
+				78322D5B3449708BA932813D /* SeriesTableView.swift in Sources */,
+				64039F3C6AACEF3295270819 /* Services.swift in Sources */,
+				D022B0821D28BCC609EB6A75 /* SettingsView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		05C6E7ACFF03F0BC9740C5D7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		49F733D215A5E84E09439126 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = BetterEconWidget/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.betterecon.app.widget;
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.9;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		51C1EF1E32DC004990471E3F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.betterecon.app;
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.9;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		7B6A04FFB39790ACA7353AC0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = BetterEconWidget/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.betterecon.app.widget;
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.9;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		B56D1CC1D38AF24D3C511E8E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.betterecon.app;
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.9;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		F60B755A11C0BD7F11701B28 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		B485F1115637847011595847 /* Build configuration list for PBXProject "BetterEcon" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F60B755A11C0BD7F11701B28 /* Debug */,
+				05C6E7ACFF03F0BC9740C5D7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		D33DD2B14448928C12D4362F /* Build configuration list for PBXNativeTarget "BetterEcon" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				51C1EF1E32DC004990471E3F /* Debug */,
+				B56D1CC1D38AF24D3C511E8E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		DB68E5783F33718B928D79E3 /* Build configuration list for PBXNativeTarget "BetterEconWidget" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				49F733D215A5E84E09439126 /* Debug */,
+				7B6A04FFB39790ACA7353AC0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 41F8D57AE16910EFD78D4D3E /* Project object */;
+}

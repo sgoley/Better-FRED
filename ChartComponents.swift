@@ -532,7 +532,7 @@ struct ExportableChartCard: View {
                         .font(.caption2.italic())
                         .foregroundStyle(Color.white.opacity(0.6))
                 }
-                Text("• Better-FRED")
+                Text("• BetterEcon")
                     .font(.caption2.weight(.semibold))
                     .foregroundStyle(BetterTheme.cyan)
             }

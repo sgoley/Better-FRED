@@ -119,7 +119,7 @@ final class AppModel: ObservableObject {
     @Published var loadingSeriesIDs: Set<String> = []
     @Published private(set) var snapshots: [String: SeriesSnapshot] = [:]
 
-    private let watchlistKey = "betterfred.watchlist"
+    private let watchlistKey = "betterecon.watchlist"
 
     init() {
         let initialKey = Self.resolveInitialKey()
@@ -132,7 +132,9 @@ final class AppModel: ObservableObject {
             self.isLive = false
         }
 
-        var list = UserDefaults.standard.stringArray(forKey: watchlistKey) ?? ["MORTGAGE30US", "CPIAUCSL", "UNRATE", "FEDFUNDS", "DGS10", "GDPC1"]
+        var list = UserDefaults.standard.stringArray(forKey: watchlistKey)
+            ?? UserDefaults.standard.stringArray(forKey: "betterfred.watchlist")
+            ?? ["MORTGAGE30US", "CPIAUCSL", "UNRATE", "FEDFUNDS", "DGS10", "GDPC1"]
         if !list.contains("MORTGAGE30US") {
             list.insert("MORTGAGE30US", at: 0)
         }

@@ -1,7 +1,7 @@
 import SwiftUI
 
 @main
-struct BetterFREDApp: App {
+struct BetterEconApp: App {
     @StateObject private var appModel = AppModel()
 
     var body: some Scene {

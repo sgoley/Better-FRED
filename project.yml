@@ -1,23 +1,23 @@
-name: Better-FRED
+name: BetterEcon
 options:
-  bundleIdPrefix: com.betterfred
+  bundleIdPrefix: com.betterecon
   deploymentTarget:
     iOS: "17.0"
 targets:
-  Better-FRED:
+  BetterEcon:
     type: application
     platform: iOS
     sources:
       - path: .
         excludes:
-          - Better-FREDWidget/**
+          - BetterEconWidget/**
           - "*.xcodeproj/**"
           - ".build/**"
           - "DerivedData/**"
           - "docs/**"
           - LICENSE
     settings:
-      PRODUCT_BUNDLE_IDENTIFIER: com.betterfred.app
+      PRODUCT_BUNDLE_IDENTIFIER: com.betterecon.app
       SWIFT_VERSION: 5.9
       ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
     info:
@@ -35,17 +35,17 @@ targets:
           - UIInterfaceOrientationPortraitUpsideDown
           - UIInterfaceOrientationLandscapeLeft
           - UIInterfaceOrientationLandscapeRight
-  Better-FREDWidget:
+  BetterEconWidget:
     type: app-extension
     platform: iOS
-    sources: [Better-FREDWidget]
+    sources: [BetterEconWidget]
     settings:
-      PRODUCT_BUNDLE_IDENTIFIER: com.betterfred.app.widget
+      PRODUCT_BUNDLE_IDENTIFIER: com.betterecon.app.widget
       SWIFT_VERSION: 5.9
     info:
-      path: Better-FREDWidget/Info.plist
+      path: BetterEconWidget/Info.plist
       properties:
         CFBundleDisplayName: BetterEcon Widget
         NSExtension:
           NSExtensionPointIdentifier: com.apple.widgetkit-extension
-          NSExtensionPrincipalClass: $(PRODUCT_MODULE_NAME).BetterFREDWidgetBundle
+          NSExtensionPrincipalClass: $(PRODUCT_MODULE_NAME).BetterEconWidgetBundle

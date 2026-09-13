@@ -2,9 +2,9 @@ import Foundation
 import Security
 
 enum KeychainHelper {
-    private static let service = "com.betterfred.app.secrets"
+    private static let service = "com.betterecon.app.secrets"
     private static let account = "FRED_API_KEY"
-    private static let userDefaultsKey = "betterfred.api_key.fallback"
+    private static let userDefaultsKey = "betterecon.api_key.fallback"
 
     static func saveKey(_ key: String) -> Bool {
         let cleanKey = key.trimmingCharacters(in: .whitespacesAndNewlines)
@@ -50,7 +50,8 @@ enum KeychainHelper {
         }
 
         // Check UserDefaults fallback
-        if let fallback = UserDefaults.standard.string(forKey: userDefaultsKey), !fallback.isEmpty {
+        if let fallback = UserDefaults.standard.string(forKey: userDefaultsKey)
+            ?? UserDefaults.standard.string(forKey: "betterfred.api_key.fallback"), !fallback.isEmpty {
             return fallback.trimmingCharacters(in: .whitespacesAndNewlines)
         }
 

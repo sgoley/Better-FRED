@@ -14,10 +14,12 @@ An open-source SwiftUI client for exploring, comparing, and monitoring US macroe
 
 ## Getting started
 
-Open `Better-FRED.xcodeproj` in Xcode, choose the `Better-FRED` scheme, select an iOS Simulator, and run.
+Open `BetterEcon.xcodeproj` in Xcode, choose the `BetterEcon` scheme, select an iOS Simulator, and run.
 
 ### API Key (BYOK) & Live FRED® Data
+
 Better US Econ Data uses a Bring-Your-Own-Key (BYOK) model:
+
 - **In-App Settings**: Tap the **Live API / Preview** pill in the Dashboard header or visit the **Settings** tab.
 - **Secure Storage**: Your 32-character FRED API key is saved directly to your device's **iOS Secure Keychain** (`kSecClassGenericPassword`). It is never transmitted to any third-party servers.
 - **Test Connection**: Validate your key directly in Settings before saving.
