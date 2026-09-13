@@ -7,37 +7,296 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		03BBB957FC42887B08BA9EEE /* pre-push.sample in Resources */ = {isa = PBXBuildFile; fileRef = 0093C603FE22588334D40912 /* pre-push.sample */; };
+		0F8F0ACBBBE77CB1EF8DDA5D /* MORTGAGE30US.csv in Resources */ = {isa = PBXBuildFile; fileRef = 2D105B31BFD929E8D2A4C79E /* MORTGAGE30US.csv */; };
+		15497B69D17F6C4CCC2CE023 /* ChartComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C8BBA9D0AD385EB8E626AE3 /* ChartComponents.swift */; };
 		1E8E51DB88A38841F2574679 /* BetterFREDApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3747B70F8AEB7FF945F3F3F1 /* BetterFREDApp.swift */; };
+		21ECFB8C9CA17EB685902423 /* pre-merge-commit.sample in Resources */ = {isa = PBXBuildFile; fileRef = 86006F1F70EE59AAFD81CB9E /* pre-merge-commit.sample */; };
 		360FE735245E0A98403E3D9F /* DesignSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CB069584FA97693CE884752 /* DesignSystem.swift */; };
+		48A5EFBEE95DCF2811191AFC /* pre-applypatch.sample in Resources */ = {isa = PBXBuildFile; fileRef = 7F663E57D42B4BF9647BA199 /* pre-applypatch.sample */; };
 		59B9D13000DAA4156C315C6D /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 90E32DCC3848ECC9146E2332 /* README.md */; };
+		5A81CF157C47358DFCDAB3B4 /* applypatch-msg.sample in Resources */ = {isa = PBXBuildFile; fileRef = E5D536AEF8FFE821EC264669 /* applypatch-msg.sample */; };
+		6219BA8AFAC5A093B81B1D39 /* fsmonitor-watchman.sample in Resources */ = {isa = PBXBuildFile; fileRef = 26014E6D49DD991E00BA5C6A /* fsmonitor-watchman.sample */; };
+		6CABB055EA647C2723D06173 /* HistoricalDatasets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CA3657F7EFB67DEF6307FA2 /* HistoricalDatasets.swift */; };
+		706E504CC45EFA526EF767EA /* update.sample in Resources */ = {isa = PBXBuildFile; fileRef = 908AE2B635CAF58F6B34B4CC /* update.sample */; };
+		709AEB09FED04AB330CA9E1A /* push-to-checkout.sample in Resources */ = {isa = PBXBuildFile; fileRef = FCD7233CEB03A168305FCE32 /* push-to-checkout.sample */; };
 		89B853687FB934065E7A16F7 /* CompareView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42AF71634947AE9A0237D0A8 /* CompareView.swift */; };
 		8AE0720EFCD2D50646081CF3 /* Services.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0888A7FDC087E93B791650E /* Services.swift */; };
+		9601124CB7213127D973F5D9 /* commit-msg.sample in Resources */ = {isa = PBXBuildFile; fileRef = 6993A198F95249A275B73994 /* commit-msg.sample */; };
 		9BFAFBE142D04679BAA8DAC2 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3906AEFD0570775ECE717720 /* Models.swift */; };
 		9EC64DE55EF4214885573BCE /* SeriesDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABCA7882E5F0C7C059F0145C /* SeriesDetailView.swift */; };
+		9EE0192D7C0468F1FABC209B /* pre-receive.sample in Resources */ = {isa = PBXBuildFile; fileRef = 28D5685BCC369A0E20105B55 /* pre-receive.sample */; };
+		B0DF996AE78ADCA468473900 /* FullscreenChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EB0A2450F5D539972AC30F1 /* FullscreenChartView.swift */; };
+		B6EE0BF61416AC0FBA229D2B /* sendemail-validate.sample in Resources */ = {isa = PBXBuildFile; fileRef = 761D0B832817D6190B75156E /* sendemail-validate.sample */; };
+		BF984F92C3434460BC734790 /* SeriesTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D40BBB984751E963DE40735 /* SeriesTableView.swift */; };
+		C0E67DA0935D6FCF0E1BEDE7 /* pre-rebase.sample in Resources */ = {isa = PBXBuildFile; fileRef = A61CD5C4BE9D1958E88C1638 /* pre-rebase.sample */; };
 		C7D376474C472B445F32F42D /* project.yml in Resources */ = {isa = PBXBuildFile; fileRef = DAEF8ABF105319CD7A24603D /* project.yml */; };
+		D4481117A9407BF4BEB7C286 /* pre-commit.sample in Resources */ = {isa = PBXBuildFile; fileRef = D5EBD3FB62103DF58DBD4F53 /* pre-commit.sample */; };
 		D925B6D47E1DCD04547914E0 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6719BE105108FDD64037EC /* RootView.swift */; };
+		DA4514F6F95BFD93C01BEB5D /* post-update.sample in Resources */ = {isa = PBXBuildFile; fileRef = 400C8BD04B7A8E6E1ED5184D /* post-update.sample */; };
+		EBB11AB938395052C54D17BD /* prepare-commit-msg.sample in Resources */ = {isa = PBXBuildFile; fileRef = DD5C45F5DA281F31808562FF /* prepare-commit-msg.sample */; };
 		F13140EF43C2D470FD1EC6DD /* BetterFREDWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9E3854229B1F0208FD22941 /* BetterFREDWidget.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0093C603FE22588334D40912 /* pre-push.sample */ = {isa = PBXFileReference; path = "pre-push.sample"; sourceTree = "<group>"; };
+		0BDB7725EA1CC6DE45906E50 /* FETCH_HEAD */ = {isa = PBXFileReference; path = FETCH_HEAD; sourceTree = "<group>"; };
+		179728C2EE159B40D0D098A1 /* 7450a2ffd43b1dfc10351eb6d263b1b517d9c7 */ = {isa = PBXFileReference; path = 7450a2ffd43b1dfc10351eb6d263b1b517d9c7; sourceTree = "<group>"; };
+		180483D14A980D50B13CB318 /* 29faaca7d36abe75303d98380ca0d7ee46fb1b */ = {isa = PBXFileReference; path = 29faaca7d36abe75303d98380ca0d7ee46fb1b; sourceTree = "<group>"; };
+		1AD8C748E5734B71ED1067E5 /* config */ = {isa = PBXFileReference; path = config; sourceTree = "<group>"; };
+		1EAD42B96D636ED45F984F4D /* exclude */ = {isa = PBXFileReference; path = exclude; sourceTree = "<group>"; };
+		2582766EC1A40A7DBD8E8575 /* HEAD */ = {isa = PBXFileReference; path = HEAD; sourceTree = "<group>"; };
+		26014E6D49DD991E00BA5C6A /* fsmonitor-watchman.sample */ = {isa = PBXFileReference; path = "fsmonitor-watchman.sample"; sourceTree = "<group>"; };
+		28D5685BCC369A0E20105B55 /* pre-receive.sample */ = {isa = PBXFileReference; path = "pre-receive.sample"; sourceTree = "<group>"; };
+		2C6852B2A3141CBEFE50F4FF /* 84270fc703bd234161353093a1ca3b9ba1eb08 */ = {isa = PBXFileReference; path = 84270fc703bd234161353093a1ca3b9ba1eb08; sourceTree = "<group>"; };
+		2D105B31BFD929E8D2A4C79E /* MORTGAGE30US.csv */ = {isa = PBXFileReference; path = MORTGAGE30US.csv; sourceTree = "<group>"; };
+		36FF0064C7DE8B9BFA7B5031 /* description */ = {isa = PBXFileReference; path = description; sourceTree = "<group>"; };
 		3747B70F8AEB7FF945F3F3F1 /* BetterFREDApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BetterFREDApp.swift; sourceTree = "<group>"; };
 		3906AEFD0570775ECE717720 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
 		3B1AF7F5D01B6CDFEE37B647 /* Better-FRED.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = "Better-FRED.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3B268B33BD68AC4EE653C30D /* c19cc17a1d6452956495c8f392c3673f08a9eb */ = {isa = PBXFileReference; path = c19cc17a1d6452956495c8f392c3673f08a9eb; sourceTree = "<group>"; };
+		400C8BD04B7A8E6E1ED5184D /* post-update.sample */ = {isa = PBXFileReference; path = "post-update.sample"; sourceTree = "<group>"; };
 		42AF71634947AE9A0237D0A8 /* CompareView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompareView.swift; sourceTree = "<group>"; };
+		4C2541F8A487422CECE5C33D /* 64a21a82f2b6c184b60b6b9d312903ea1f0ceb */ = {isa = PBXFileReference; path = 64a21a82f2b6c184b60b6b9d312903ea1f0ceb; sourceTree = "<group>"; };
+		4FAC523AC1BBF47A2C94656C /* main */ = {isa = PBXFileReference; path = main; sourceTree = "<group>"; };
+		53412EBDACB1C0E3C5B44C9E /* 28f3b5180ffb3e1cbf54d169027ad8a7b4ae62 */ = {isa = PBXFileReference; path = 28f3b5180ffb3e1cbf54d169027ad8a7b4ae62; sourceTree = "<group>"; };
+		55E510BF2B4DF8C8739078F3 /* HEAD */ = {isa = PBXFileReference; path = HEAD; sourceTree = "<group>"; };
+		55FABC9D9CDA4EFD5CA63A05 /* 4255c623f5d715fa9664f11bf477b399d15360 */ = {isa = PBXFileReference; path = 4255c623f5d715fa9664f11bf477b399d15360; sourceTree = "<group>"; };
+		5768191FD99E403889867614 /* main */ = {isa = PBXFileReference; path = main; sourceTree = "<group>"; };
 		5B6719BE105108FDD64037EC /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		5DCED9B3DA9DCEEF05587622 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		5EB0A2450F5D539972AC30F1 /* FullscreenChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullscreenChartView.swift; sourceTree = "<group>"; };
+		6993A198F95249A275B73994 /* commit-msg.sample */ = {isa = PBXFileReference; path = "commit-msg.sample"; sourceTree = "<group>"; };
+		6CA3657F7EFB67DEF6307FA2 /* HistoricalDatasets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoricalDatasets.swift; sourceTree = "<group>"; };
+		761D0B832817D6190B75156E /* sendemail-validate.sample */ = {isa = PBXFileReference; path = "sendemail-validate.sample"; sourceTree = "<group>"; };
+		7C1E91327AEB98A9ECA1E820 /* e78d959339587fd1e3ca5065020fd2b6723888 */ = {isa = PBXFileReference; path = e78d959339587fd1e3ca5065020fd2b6723888; sourceTree = "<group>"; };
+		7C8BBA9D0AD385EB8E626AE3 /* ChartComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartComponents.swift; sourceTree = "<group>"; };
 		7CB069584FA97693CE884752 /* DesignSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignSystem.swift; sourceTree = "<group>"; };
+		7F663E57D42B4BF9647BA199 /* pre-applypatch.sample */ = {isa = PBXFileReference; path = "pre-applypatch.sample"; sourceTree = "<group>"; };
+		806368A356AD28BC5FD89845 /* c38178c488bef8604350026e5653e4757b5ad5 */ = {isa = PBXFileReference; path = c38178c488bef8604350026e5653e4757b5ad5; sourceTree = "<group>"; };
+		86006F1F70EE59AAFD81CB9E /* pre-merge-commit.sample */ = {isa = PBXFileReference; path = "pre-merge-commit.sample"; sourceTree = "<group>"; };
+		8C66B4BB618383A7E209AE0E /* 432fb3f54a6196e1cf08a596d3395054e027fc */ = {isa = PBXFileReference; path = 432fb3f54a6196e1cf08a596d3395054e027fc; sourceTree = "<group>"; };
+		908AE2B635CAF58F6B34B4CC /* update.sample */ = {isa = PBXFileReference; path = update.sample; sourceTree = "<group>"; };
 		90E32DCC3848ECC9146E2332 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		92730BC4B88DBF31658F94B4 /* 5a57b76ee56d93dad1579d85c0677eb809d7c0 */ = {isa = PBXFileReference; path = 5a57b76ee56d93dad1579d85c0677eb809d7c0; sourceTree = "<group>"; };
+		952491B4BA48086744781440 /* HEAD */ = {isa = PBXFileReference; path = HEAD; sourceTree = "<group>"; };
 		9C7EB02CF1E68DBD0CE9DA25 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		9D40BBB984751E963DE40735 /* SeriesTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeriesTableView.swift; sourceTree = "<group>"; };
+		9F8FE90EC5D4C321C2170017 /* index */ = {isa = PBXFileReference; path = index; sourceTree = "<group>"; };
+		A50724A50FD4D8156B00C923 /* 9e4de2af142a3662de99cd8c23a9b406560c2d */ = {isa = PBXFileReference; path = 9e4de2af142a3662de99cd8c23a9b406560c2d; sourceTree = "<group>"; };
+		A53D54C23E6A7812CD5C30D8 /* 2f1acb4eb7a50e5734273e1bfa1ca61096b7b1 */ = {isa = PBXFileReference; path = 2f1acb4eb7a50e5734273e1bfa1ca61096b7b1; sourceTree = "<group>"; };
+		A57DED3AAB22E6A234D51CBD /* main */ = {isa = PBXFileReference; path = main; sourceTree = "<group>"; };
+		A61CD5C4BE9D1958E88C1638 /* pre-rebase.sample */ = {isa = PBXFileReference; path = "pre-rebase.sample"; sourceTree = "<group>"; };
 		ABCA7882E5F0C7C059F0145C /* SeriesDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeriesDetailView.swift; sourceTree = "<group>"; };
+		AC1C72108F77B3D850AB01BD /* 10cff74b47fbb5dd76eefdf63c81941f7a1618 */ = {isa = PBXFileReference; path = 10cff74b47fbb5dd76eefdf63c81941f7a1618; sourceTree = "<group>"; };
+		AF21D1DD13289207701D31FB /* 1f37389df0b4ea0aeb95bb98488d5a093fdcb1 */ = {isa = PBXFileReference; path = 1f37389df0b4ea0aeb95bb98488d5a093fdcb1; sourceTree = "<group>"; };
+		B04193F505124AE12107D7B5 /* COMMIT_EDITMSG */ = {isa = PBXFileReference; path = COMMIT_EDITMSG; sourceTree = "<group>"; };
 		B9EF52C0AD4D929A059BFADE /* .gitignore */ = {isa = PBXFileReference; path = .gitignore; sourceTree = "<group>"; };
+		C4A510AC5521F0403E54A69A /* main */ = {isa = PBXFileReference; path = main; sourceTree = "<group>"; };
+		C60034A37D90650961D08492 /* 9434a6254f0e9651f402737811be6634a03e9c */ = {isa = PBXFileReference; path = 9434a6254f0e9651f402737811be6634a03e9c; sourceTree = "<group>"; };
+		CBB07F58A0B14C3BBCF838CC /* 548bc84f37984f86d5826d886a889dbd52e8c0 */ = {isa = PBXFileReference; path = 548bc84f37984f86d5826d886a889dbd52e8c0; sourceTree = "<group>"; };
+		D5EBD3FB62103DF58DBD4F53 /* pre-commit.sample */ = {isa = PBXFileReference; path = "pre-commit.sample"; sourceTree = "<group>"; };
+		D89F833908A62121F8D66EED /* 6f65d35650d32a61551249bdc6174a81edc062 */ = {isa = PBXFileReference; path = 6f65d35650d32a61551249bdc6174a81edc062; sourceTree = "<group>"; };
 		D9E3854229B1F0208FD22941 /* BetterFREDWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BetterFREDWidget.swift; sourceTree = "<group>"; };
 		DAEF8ABF105319CD7A24603D /* project.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = project.yml; sourceTree = "<group>"; };
+		DD5C45F5DA281F31808562FF /* prepare-commit-msg.sample */ = {isa = PBXFileReference; path = "prepare-commit-msg.sample"; sourceTree = "<group>"; };
 		E0888A7FDC087E93B791650E /* Services.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Services.swift; sourceTree = "<group>"; };
+		E5D536AEF8FFE821EC264669 /* applypatch-msg.sample */ = {isa = PBXFileReference; path = "applypatch-msg.sample"; sourceTree = "<group>"; };
+		E85EDA20BAC85407834DDB93 /* edb671cdd6e1777c0c050f685db53f1e3b1121 */ = {isa = PBXFileReference; path = edb671cdd6e1777c0c050f685db53f1e3b1121; sourceTree = "<group>"; };
+		E888E1A63AFFE73804234578 /* HEAD */ = {isa = PBXFileReference; path = HEAD; sourceTree = "<group>"; };
+		FCD7233CEB03A168305FCE32 /* push-to-checkout.sample */ = {isa = PBXFileReference; path = "push-to-checkout.sample"; sourceTree = "<group>"; };
+		FDFA7DB6261FAF674DC257C7 /* 2802e496dad569e926d07a9c41c11277e93463 */ = {isa = PBXFileReference; path = 2802e496dad569e926d07a9c41c11277e93463; sourceTree = "<group>"; };
 		FFFC3B7C8B408305DC1D36D7 /* Better-FREDWidget.appex */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = "wrapper.app-extension"; path = "Better-FREDWidget.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
+		1400E8613971269C204C1D2C /* hooks */ = {
+			isa = PBXGroup;
+			children = (
+				E5D536AEF8FFE821EC264669 /* applypatch-msg.sample */,
+				6993A198F95249A275B73994 /* commit-msg.sample */,
+				26014E6D49DD991E00BA5C6A /* fsmonitor-watchman.sample */,
+				400C8BD04B7A8E6E1ED5184D /* post-update.sample */,
+				7F663E57D42B4BF9647BA199 /* pre-applypatch.sample */,
+				D5EBD3FB62103DF58DBD4F53 /* pre-commit.sample */,
+				86006F1F70EE59AAFD81CB9E /* pre-merge-commit.sample */,
+				0093C603FE22588334D40912 /* pre-push.sample */,
+				A61CD5C4BE9D1958E88C1638 /* pre-rebase.sample */,
+				28D5685BCC369A0E20105B55 /* pre-receive.sample */,
+				DD5C45F5DA281F31808562FF /* prepare-commit-msg.sample */,
+				FCD7233CEB03A168305FCE32 /* push-to-checkout.sample */,
+				761D0B832817D6190B75156E /* sendemail-validate.sample */,
+				908AE2B635CAF58F6B34B4CC /* update.sample */,
+			);
+			path = hooks;
+			sourceTree = "<group>";
+		};
+		17D2B5E3B7C7AA64388ECCB7 /* heads */ = {
+			isa = PBXGroup;
+			children = (
+				C4A510AC5521F0403E54A69A /* main */,
+			);
+			path = heads;
+			sourceTree = "<group>";
+		};
+		214743361DFCB9A19D09C898 /* 56 */ = {
+			isa = PBXGroup;
+			children = (
+				AC1C72108F77B3D850AB01BD /* 10cff74b47fbb5dd76eefdf63c81941f7a1618 */,
+			);
+			path = 56;
+			sourceTree = "<group>";
+		};
+		3649CB641B65E830CAEC3EC7 /* b1 */ = {
+			isa = PBXGroup;
+			children = (
+				A53D54C23E6A7812CD5C30D8 /* 2f1acb4eb7a50e5734273e1bfa1ca61096b7b1 */,
+			);
+			path = b1;
+			sourceTree = "<group>";
+		};
+		3DD9E7E875EC35FBB8A2AD28 /* 22 */ = {
+			isa = PBXGroup;
+			children = (
+				4C2541F8A487422CECE5C33D /* 64a21a82f2b6c184b60b6b9d312903ea1f0ceb */,
+			);
+			path = 22;
+			sourceTree = "<group>";
+		};
+		4081C76977D833A31C845A9F /* 69 */ = {
+			isa = PBXGroup;
+			children = (
+				180483D14A980D50B13CB318 /* 29faaca7d36abe75303d98380ca0d7ee46fb1b */,
+			);
+			path = 69;
+			sourceTree = "<group>";
+		};
+		4F876B9182EDA031A884EE1D /* objects */ = {
+			isa = PBXGroup;
+			children = (
+				B69102E9894AED7D3ED99744 /* 0c */,
+				E091CB2FBCD579CA55AADD6A /* 2f */,
+				CE320B4D49FB8A9864143FB0 /* 6f */,
+				3DD9E7E875EC35FBB8A2AD28 /* 22 */,
+				87FC00AF7F6F8D92824E2284 /* 27 */,
+				FD323BDE88021715CC3F0255 /* 35 */,
+				214743361DFCB9A19D09C898 /* 56 */,
+				4081C76977D833A31C845A9F /* 69 */,
+				A0B22DE60252BE13F08A675D /* 91 */,
+				6385B66F1FF0050DA83B53FE /* a1 */,
+				3649CB641B65E830CAEC3EC7 /* b1 */,
+				E454D4BEC7F820C251126C7F /* c8 */,
+				FB4235B7A6ADCCC5281A4FAA /* d6 */,
+				959319C9B20E96A552C645D3 /* d8 */,
+				66CB9C88796FC85BF99BC039 /* d9 */,
+				8C12B37C0DD9684BD8C60427 /* dc */,
+				DD80B8AB9588CA246CB9A399 /* f2 */,
+				76F3A8355446B95BE68EBB12 /* f9 */,
+				E7E8B085A1C68858B849D7AF /* fc */,
+			);
+			path = objects;
+			sourceTree = "<group>";
+		};
+		55B44C1CE5C6D6E6706E7C60 /* heads */ = {
+			isa = PBXGroup;
+			children = (
+				A57DED3AAB22E6A234D51CBD /* main */,
+			);
+			path = heads;
+			sourceTree = "<group>";
+		};
+		6385B66F1FF0050DA83B53FE /* a1 */ = {
+			isa = PBXGroup;
+			children = (
+				D89F833908A62121F8D66EED /* 6f65d35650d32a61551249bdc6174a81edc062 */,
+			);
+			path = a1;
+			sourceTree = "<group>";
+		};
+		66CB9C88796FC85BF99BC039 /* d9 */ = {
+			isa = PBXGroup;
+			children = (
+				3B268B33BD68AC4EE653C30D /* c19cc17a1d6452956495c8f392c3673f08a9eb */,
+			);
+			path = d9;
+			sourceTree = "<group>";
+		};
+		675526F1BF3B21A827B3D420 /* origin */ = {
+			isa = PBXGroup;
+			children = (
+				E888E1A63AFFE73804234578 /* HEAD */,
+				5768191FD99E403889867614 /* main */,
+			);
+			path = origin;
+			sourceTree = "<group>";
+		};
+		6A71F4E3738F3898C2E0E995 /* logs */ = {
+			isa = PBXGroup;
+			children = (
+				2582766EC1A40A7DBD8E8575 /* HEAD */,
+				E44F413D3DBD0D427263F42E /* refs */,
+			);
+			path = logs;
+			sourceTree = "<group>";
+		};
+		76F3A8355446B95BE68EBB12 /* f9 */ = {
+			isa = PBXGroup;
+			children = (
+				FDFA7DB6261FAF674DC257C7 /* 2802e496dad569e926d07a9c41c11277e93463 */,
+			);
+			path = f9;
+			sourceTree = "<group>";
+		};
+		8028B729C8E772D91FB17B05 /* .git */ = {
+			isa = PBXGroup;
+			children = (
+				B04193F505124AE12107D7B5 /* COMMIT_EDITMSG */,
+				1AD8C748E5734B71ED1067E5 /* config */,
+				36FF0064C7DE8B9BFA7B5031 /* description */,
+				0BDB7725EA1CC6DE45906E50 /* FETCH_HEAD */,
+				952491B4BA48086744781440 /* HEAD */,
+				9F8FE90EC5D4C321C2170017 /* index */,
+				1400E8613971269C204C1D2C /* hooks */,
+				AEE514C08BA734A6745EA348 /* info */,
+				6A71F4E3738F3898C2E0E995 /* logs */,
+				4F876B9182EDA031A884EE1D /* objects */,
+				D346025D05EC97BB1B375194 /* refs */,
+			);
+			path = .git;
+			sourceTree = "<group>";
+		};
+		87FC00AF7F6F8D92824E2284 /* 27 */ = {
+			isa = PBXGroup;
+			children = (
+				179728C2EE159B40D0D098A1 /* 7450a2ffd43b1dfc10351eb6d263b1b517d9c7 */,
+			);
+			path = 27;
+			sourceTree = "<group>";
+		};
+		8C12B37C0DD9684BD8C60427 /* dc */ = {
+			isa = PBXGroup;
+			children = (
+				7C1E91327AEB98A9ECA1E820 /* e78d959339587fd1e3ca5065020fd2b6723888 */,
+			);
+			path = dc;
+			sourceTree = "<group>";
+		};
+		948CDA9C58005F94A4C8B6B3 /* remotes */ = {
+			isa = PBXGroup;
+			children = (
+				CFA432A91285B52C7DE85DC3 /* origin */,
+			);
+			path = remotes;
+			sourceTree = "<group>";
+		};
+		959319C9B20E96A552C645D3 /* d8 */ = {
+			isa = PBXGroup;
+			children = (
+				806368A356AD28BC5FD89845 /* c38178c488bef8604350026e5653e4757b5ad5 */,
+			);
+			path = d8;
+			sourceTree = "<group>";
+		};
 		9CDD351588AD1C264EC45732 /* Better-FREDWidget */ = {
 			isa = PBXGroup;
 			children = (
@@ -45,6 +304,38 @@
 				5DCED9B3DA9DCEEF05587622 /* Info.plist */,
 			);
 			path = "Better-FREDWidget";
+			sourceTree = "<group>";
+		};
+		9DFE47105D09F09A4EB3A0D5 /* remotes */ = {
+			isa = PBXGroup;
+			children = (
+				675526F1BF3B21A827B3D420 /* origin */,
+			);
+			path = remotes;
+			sourceTree = "<group>";
+		};
+		A0B22DE60252BE13F08A675D /* 91 */ = {
+			isa = PBXGroup;
+			children = (
+				C60034A37D90650961D08492 /* 9434a6254f0e9651f402737811be6634a03e9c */,
+			);
+			path = 91;
+			sourceTree = "<group>";
+		};
+		AEE514C08BA734A6745EA348 /* info */ = {
+			isa = PBXGroup;
+			children = (
+				1EAD42B96D636ED45F984F4D /* exclude */,
+			);
+			path = info;
+			sourceTree = "<group>";
+		};
+		B69102E9894AED7D3ED99744 /* 0c */ = {
+			isa = PBXGroup;
+			children = (
+				8C66B4BB618383A7E209AE0E /* 432fb3f54a6196e1cf08a596d3395054e027fc */,
+			);
+			path = 0c;
 			sourceTree = "<group>";
 		};
 		C930BBFE2A660E4E5FD7A892 /* Products */ = {
@@ -56,20 +347,52 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		CE320B4D49FB8A9864143FB0 /* 6f */ = {
+			isa = PBXGroup;
+			children = (
+				E85EDA20BAC85407834DDB93 /* edb671cdd6e1777c0c050f685db53f1e3b1121 */,
+			);
+			path = 6f;
+			sourceTree = "<group>";
+		};
+		CFA432A91285B52C7DE85DC3 /* origin */ = {
+			isa = PBXGroup;
+			children = (
+				55E510BF2B4DF8C8739078F3 /* HEAD */,
+				4FAC523AC1BBF47A2C94656C /* main */,
+			);
+			path = origin;
+			sourceTree = "<group>";
+		};
+		D346025D05EC97BB1B375194 /* refs */ = {
+			isa = PBXGroup;
+			children = (
+				17D2B5E3B7C7AA64388ECCB7 /* heads */,
+				948CDA9C58005F94A4C8B6B3 /* remotes */,
+			);
+			path = refs;
+			sourceTree = "<group>";
+		};
 		D7C132C59C14042753D12F47 /* Better-FRED */ = {
 			isa = PBXGroup;
 			children = (
 				B9EF52C0AD4D929A059BFADE /* .gitignore */,
 				3747B70F8AEB7FF945F3F3F1 /* BetterFREDApp.swift */,
+				7C8BBA9D0AD385EB8E626AE3 /* ChartComponents.swift */,
 				42AF71634947AE9A0237D0A8 /* CompareView.swift */,
 				7CB069584FA97693CE884752 /* DesignSystem.swift */,
+				5EB0A2450F5D539972AC30F1 /* FullscreenChartView.swift */,
+				6CA3657F7EFB67DEF6307FA2 /* HistoricalDatasets.swift */,
 				9C7EB02CF1E68DBD0CE9DA25 /* Info.plist */,
 				3906AEFD0570775ECE717720 /* Models.swift */,
+				2D105B31BFD929E8D2A4C79E /* MORTGAGE30US.csv */,
 				DAEF8ABF105319CD7A24603D /* project.yml */,
 				90E32DCC3848ECC9146E2332 /* README.md */,
 				5B6719BE105108FDD64037EC /* RootView.swift */,
 				ABCA7882E5F0C7C059F0145C /* SeriesDetailView.swift */,
+				9D40BBB984751E963DE40735 /* SeriesTableView.swift */,
 				E0888A7FDC087E93B791650E /* Services.swift */,
+				8028B729C8E772D91FB17B05 /* .git */,
 			);
 			name = "Better-FRED";
 			path = .;
@@ -78,10 +401,69 @@
 		D9A8FCCB6C64F0F0C86DAAF3 = {
 			isa = PBXGroup;
 			children = (
+				8028B729C8E772D91FB17B05 /* .git */,
 				D7C132C59C14042753D12F47 /* Better-FRED */,
 				9CDD351588AD1C264EC45732 /* Better-FREDWidget */,
 				C930BBFE2A660E4E5FD7A892 /* Products */,
 			);
+			sourceTree = "<group>";
+		};
+		DD80B8AB9588CA246CB9A399 /* f2 */ = {
+			isa = PBXGroup;
+			children = (
+				53412EBDACB1C0E3C5B44C9E /* 28f3b5180ffb3e1cbf54d169027ad8a7b4ae62 */,
+			);
+			path = f2;
+			sourceTree = "<group>";
+		};
+		E091CB2FBCD579CA55AADD6A /* 2f */ = {
+			isa = PBXGroup;
+			children = (
+				A50724A50FD4D8156B00C923 /* 9e4de2af142a3662de99cd8c23a9b406560c2d */,
+			);
+			path = 2f;
+			sourceTree = "<group>";
+		};
+		E44F413D3DBD0D427263F42E /* refs */ = {
+			isa = PBXGroup;
+			children = (
+				55B44C1CE5C6D6E6706E7C60 /* heads */,
+				9DFE47105D09F09A4EB3A0D5 /* remotes */,
+			);
+			path = refs;
+			sourceTree = "<group>";
+		};
+		E454D4BEC7F820C251126C7F /* c8 */ = {
+			isa = PBXGroup;
+			children = (
+				92730BC4B88DBF31658F94B4 /* 5a57b76ee56d93dad1579d85c0677eb809d7c0 */,
+			);
+			path = c8;
+			sourceTree = "<group>";
+		};
+		E7E8B085A1C68858B849D7AF /* fc */ = {
+			isa = PBXGroup;
+			children = (
+				2C6852B2A3141CBEFE50F4FF /* 84270fc703bd234161353093a1ca3b9ba1eb08 */,
+			);
+			path = fc;
+			sourceTree = "<group>";
+		};
+		FB4235B7A6ADCCC5281A4FAA /* d6 */ = {
+			isa = PBXGroup;
+			children = (
+				CBB07F58A0B14C3BBCF838CC /* 548bc84f37984f86d5826d886a889dbd52e8c0 */,
+			);
+			path = d6;
+			sourceTree = "<group>";
+		};
+		FD323BDE88021715CC3F0255 /* 35 */ = {
+			isa = PBXGroup;
+			children = (
+				AF21D1DD13289207701D31FB /* 1f37389df0b4ea0aeb95bb98488d5a093fdcb1 */,
+				55FABC9D9CDA4EFD5CA63A05 /* 4255c623f5d715fa9664f11bf477b399d15360 */,
+			);
+			path = 35;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -158,8 +540,23 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0F8F0ACBBBE77CB1EF8DDA5D /* MORTGAGE30US.csv in Resources */,
 				59B9D13000DAA4156C315C6D /* README.md in Resources */,
+				5A81CF157C47358DFCDAB3B4 /* applypatch-msg.sample in Resources */,
+				9601124CB7213127D973F5D9 /* commit-msg.sample in Resources */,
+				6219BA8AFAC5A093B81B1D39 /* fsmonitor-watchman.sample in Resources */,
+				DA4514F6F95BFD93C01BEB5D /* post-update.sample in Resources */,
+				48A5EFBEE95DCF2811191AFC /* pre-applypatch.sample in Resources */,
+				D4481117A9407BF4BEB7C286 /* pre-commit.sample in Resources */,
+				21ECFB8C9CA17EB685902423 /* pre-merge-commit.sample in Resources */,
+				03BBB957FC42887B08BA9EEE /* pre-push.sample in Resources */,
+				C0E67DA0935D6FCF0E1BEDE7 /* pre-rebase.sample in Resources */,
+				9EE0192D7C0468F1FABC209B /* pre-receive.sample in Resources */,
+				EBB11AB938395052C54D17BD /* prepare-commit-msg.sample in Resources */,
 				C7D376474C472B445F32F42D /* project.yml in Resources */,
+				709AEB09FED04AB330CA9E1A /* push-to-checkout.sample in Resources */,
+				B6EE0BF61416AC0FBA229D2B /* sendemail-validate.sample in Resources */,
+				706E504CC45EFA526EF767EA /* update.sample in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -179,11 +576,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				1E8E51DB88A38841F2574679 /* BetterFREDApp.swift in Sources */,
+				15497B69D17F6C4CCC2CE023 /* ChartComponents.swift in Sources */,
 				89B853687FB934065E7A16F7 /* CompareView.swift in Sources */,
 				360FE735245E0A98403E3D9F /* DesignSystem.swift in Sources */,
+				B0DF996AE78ADCA468473900 /* FullscreenChartView.swift in Sources */,
+				6CABB055EA647C2723D06173 /* HistoricalDatasets.swift in Sources */,
 				9BFAFBE142D04679BAA8DAC2 /* Models.swift in Sources */,
 				D925B6D47E1DCD04547914E0 /* RootView.swift in Sources */,
 				9EC64DE55EF4214885573BCE /* SeriesDetailView.swift in Sources */,
+				BF984F92C3434460BC734790 /* SeriesTableView.swift in Sources */,
 				8AE0720EFCD2D50646081CF3 /* Services.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

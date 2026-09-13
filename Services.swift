@@ -62,10 +62,49 @@ final class AppModel: ObservableObject {
     let client: FREDDataProviding
     private let watchlistKey = "betterfred.watchlist"
 
+    @Published var loadingSeriesIDs: Set<String> = []
+    private var snapshotCache: [String: SeriesSnapshot] = [:]
+
     init() {
-        if let key = ProcessInfo.processInfo.environment["FRED_API_KEY"], !key.isEmpty { client = FREDAPIClient(apiKey: key) }
-        else { client = PreviewFREDClient() }
-        watchlist = UserDefaults.standard.stringArray(forKey: watchlistKey) ?? ["CPIAUCSL", "UNRATE", "FEDFUNDS", "DGS10", "GDPC1"]
+        if let key = ProcessInfo.processInfo.environment["FRED_API_KEY"], !key.isEmpty {
+            client = FREDAPIClient(apiKey: key)
+        } else {
+            client = PreviewFREDClient()
+        }
+        var list = UserDefaults.standard.stringArray(forKey: watchlistKey) ?? ["MORTGAGE30US", "CPIAUCSL", "UNRATE", "FEDFUNDS", "DGS10", "GDPC1"]
+        if !list.contains("MORTGAGE30US") {
+            list.insert("MORTGAGE30US", at: 0)
+        }
+        watchlist = list
+        preloadWatchlist()
+    }
+
+    func snapshot(for series: FREDSeries) async throws -> SeriesSnapshot {
+        if let cached = snapshotCache[series.id] {
+            return cached
+        }
+        loadingSeriesIDs.insert(series.id)
+        defer { loadingSeriesIDs.remove(series.id) }
+
+        let snap = try await client.snapshot(for: series)
+        snapshotCache[series.id] = snap
+        return snap
+    }
+
+    func isPrecached(_ series: FREDSeries) -> Bool {
+        snapshotCache[series.id] != nil
+    }
+
+    func preloadWatchlist() {
+        Task {
+            for id in watchlist {
+                if let s = series(with: id), snapshotCache[id] == nil {
+                    if let snap = try? await client.snapshot(for: s) {
+                        snapshotCache[id] = snap
+                    }
+                }
+            }
+        }
     }
 
     func isSaved(_ series: FREDSeries) -> Bool { watchlist.contains(series.id) }

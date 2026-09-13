@@ -12,6 +12,8 @@ targets:
         excludes:
           - Better-FREDWidget/**
           - "*.xcodeproj/**"
+          - ".build/**"
+          - "DerivedData/**"
     settings:
       PRODUCT_BUNDLE_IDENTIFIER: com.betterfred.app
       SWIFT_VERSION: 5.9
@@ -20,6 +22,15 @@ targets:
       properties:
         CFBundleDisplayName: Better-FRED
         UILaunchScreen: {}
+        UISupportedInterfaceOrientations:
+          - UIInterfaceOrientationPortrait
+          - UIInterfaceOrientationLandscapeLeft
+          - UIInterfaceOrientationLandscapeRight
+        UISupportedInterfaceOrientations~ipad:
+          - UIInterfaceOrientationPortrait
+          - UIInterfaceOrientationPortraitUpsideDown
+          - UIInterfaceOrientationLandscapeLeft
+          - UIInterfaceOrientationLandscapeRight
   Better-FREDWidget:
     type: app-extension
     platform: iOS
