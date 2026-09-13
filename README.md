@@ -1,6 +1,6 @@
-# Better-FRED
+# Better US Econ Data (BetterEcon)
 
-An open-source SwiftUI client for exploring, comparing, and monitoring FRED economic data.
+An open-source SwiftUI client for exploring, comparing, and monitoring US macroeconomic data and FRED® economic time series.
 
 ## Current slice
 
@@ -14,9 +14,15 @@ An open-source SwiftUI client for exploring, comparing, and monitoring FRED econ
 
 ## Getting started
 
-Open `Better-FRED.xcodeproj` in Xcode, choose the `Better-FRED` scheme, select an iOS Simulator, and run. The app currently uses preview data so the first screen is useful without credentials.
+Open `Better-FRED.xcodeproj` in Xcode, choose the `Better-FRED` scheme, select an iOS Simulator, and run.
 
-To use live FRED data, add an Xcode scheme environment variable named `FRED_API_KEY`. The app selects `FREDAPIClient` automatically when the variable is present and falls back to local preview data otherwise. Never commit the key.
+### API Key (BYOK) & Live FRED® Data
+Better US Econ Data uses a Bring-Your-Own-Key (BYOK) model:
+- **In-App Settings**: Tap the **Live API / Preview** pill in the Dashboard header or visit the **Settings** tab.
+- **Secure Storage**: Your 32-character FRED API key is saved directly to your device's **iOS Secure Keychain** (`kSecClassGenericPassword`). It is never transmitted to any third-party servers.
+- **Test Connection**: Validate your key directly in Settings before saving.
+- **Local Dev Auto-Seed**: If a gitignored `.env` file containing `FRED_API_KEY=...` is present locally, the app will automatically seed Keychain on first run. You can also supply `FRED_API_KEY` as a scheme environment variable.
+- **Fallback**: Without a key, the app gracefully runs in Offline Preview mode with realistic macroeconomic baselines.
 
 The `project.yml` file is also included for regenerating the project with XcodeGen:
 

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy — Better US Econ Data (BetterEcon)</title>
+  <meta name="description" content="Privacy Policy for Better US Econ Data (BetterEcon) iOS app. Zero tracking, zero telemetry, on-device Keychain security.">
+  <link rel="icon" type="image/png" href="assets/app-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav-wrapper">
+      <a href="index.html" class="nav-brand">
+        <img src="assets/app-icon.png" alt="BetterEcon Icon" class="brand-icon">
+        <span>BetterEcon</span>
+        <span class="brand-badge">Privacy</span>
+      </a>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html">← Back to Overview</a></li>
+          <li><a href="index.html#guide">User Guide</a></li>
+          <li><a href="index.html#disclosures">Disclosures</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="section">
+    <div class="container" style="max-width: 860px;">
+      <div class="section-header" style="text-align: left; margin-bottom: 30px;">
+        <span class="section-tag">App Store Verification</span>
+        <h1 class="section-title">Privacy Policy</h1>
+        <p class="section-subtitle">Official Privacy Policy for Better US Econ Data (BetterEcon) on iOS.</p>
+      </div>
+
+      <div class="legal-box">
+        <p><strong>Effective Date:</strong> September 13, 2026</p>
+        <br>
+        <p>Better US Econ Data ("BetterEcon") is built from the ground up with a zero-knowledge, privacy-first architecture. We believe your economic research, watchlist configurations, and data monitoring should remain strictly confidential.</p>
+
+        <h3>1. Information Collection and Telemetry</h3>
+        <ul>
+          <li><strong>No Account Required</strong>: You are not required to create an account, register, or provide an email address to use BetterEcon.</li>
+          <li><strong>No Analytics or Tracking SDKs</strong>: The app does not include advertising identifiers, third-party analytics frameworks, crash-reporting SDKs, or device fingerprinting.</li>
+          <li><strong>No Intermediary Server</strong>: BetterEcon operates without an intermediary relay server. Requests travel directly from your device to the Federal Reserve Bank of St. Louis over TLS.</li>
+        </ul>
+
+        <h3>2. API Key Management (BYOK)</h3>
+        <p>If you enter your personal Federal Reserve Economic Data (FRED®) API key, it is saved exclusively in your device's <strong>iOS Secure Keychain</strong> (<code>kSecClassGenericPassword</code> with <code>kSecAttrAccessibleAfterFirstUnlock</code>).</p>
+        <p>The key is never logged, never transmitted to any third party, and only sent directly to <code>api.stlouisfed.org</code> to authorize your observation requests. You can remove or replace your API key at any time from the in-app Settings screen.</p>
+
+        <h3>3. Local Storage</h3>
+        <p>Your saved watchlist series and view preferences are stored strictly locally on your device via standard iOS <code>UserDefaults</code>. This data never leaves your device.</p>
+
+        <h3>4. Apple Privacy Manifest Adherence</h3>
+        <p>The application includes an Apple Privacy Manifest (<code>PrivacyInfo.xcprivacy</code>) declaring:</p>
+        <ul>
+          <li><code>NSPrivacyTracking</code>: <code>false</code></li>
+          <li><code>NSPrivacyCollectedDataTypes</code>: <code>[]</code> (Zero data collected)</li>
+          <li><code>NSPrivacyAccessedAPITypes</code>: <code>NSPrivacyAccessedAPICategoryUserDefaults</code> with approved reason code <code>CA92.1</code>.</li>
+        </ul>
+
+        <h3>5. Third-Party Services</h3>
+        <p>When live data fetching is active, the app communicates with the Federal Reserve Bank of St. Louis FRED® API. Their data practices are governed by the <a href="https://www.stlouisfed.org/privacy-policy" target="_blank" rel="noopener">St. Louis Fed Privacy Policy</a>.</p>
+
+        <h3>6. Contact & Support</h3>
+        <p>If you have any questions regarding this Privacy Policy or need support, please submit an issue on the <a href="https://github.com/sgoley/Better-FRED/issues" target="_blank" rel="noopener">GitHub repository</a>.</p>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-bottom" style="border-top: none; padding-top: 0;">
+      <div>&copy; 2026 Scott Goley. Open source under the MIT License.</div>
+      <a href="index.html">Return to BetterEcon Home</a>
+    </div>
+  </footer>
+</body>
+</html>

@@ -22,7 +22,7 @@ struct BetterFREDWidgetView: View {
         VStack(alignment: .leading) {
             Text(entry.symbol).font(.caption.bold())
             Text(entry.value).font(.title.bold())
-            Text("Better-FRED").font(.caption2).foregroundStyle(.secondary)
+            Text("BetterEcon").font(.caption2).foregroundStyle(.secondary)
         }.containerBackground(.mint.gradient, for: .widget)
     }
 }

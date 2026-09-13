@@ -26,3 +26,7 @@ credentials/
 # Local FRED/API configuration
 FRED_API_KEY
 fred-api-key.txt
+
+# Raw data series files and exports
+*.csv
+*.tsv

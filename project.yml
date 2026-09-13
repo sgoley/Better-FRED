@@ -14,13 +14,17 @@ targets:
           - "*.xcodeproj/**"
           - ".build/**"
           - "DerivedData/**"
+          - "docs/**"
+          - LICENSE
     settings:
       PRODUCT_BUNDLE_IDENTIFIER: com.betterfred.app
       SWIFT_VERSION: 5.9
+      ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
     info:
       path: Info.plist
       properties:
-        CFBundleDisplayName: Better-FRED
+        CFBundleDisplayName: BetterEcon
+        CFBundleName: Better US Econ Data
         UILaunchScreen: {}
         UISupportedInterfaceOrientations:
           - UIInterfaceOrientationPortrait
@@ -41,7 +45,7 @@ targets:
     info:
       path: Better-FREDWidget/Info.plist
       properties:
-        CFBundleDisplayName: Better-FRED Widget
+        CFBundleDisplayName: BetterEcon Widget
         NSExtension:
           NSExtensionPointIdentifier: com.apple.widgetkit-extension
           NSExtensionPrincipalClass: $(PRODUCT_MODULE_NAME).BetterFREDWidgetBundle

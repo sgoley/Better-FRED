@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Better US Econ Data (BetterEcon) — High-Resolution SwiftUI Macroeconomic Intelligence</title>
+  <meta name="description" content="Open-source SwiftUI iOS client for Federal Reserve FRED® economic data, featuring BYOK Keychain security, raw Swift Charts fidelity, and edge-to-edge landscape trading desk.">
+  <meta property="og:title" content="Better US Econ Data (BetterEcon) — SwiftUI FRED® Client">
+  <meta property="og:description" content="Explore, compare, and monitor 800,000+ macroeconomic time series with zero-knowledge on-device API key security.">
+  <meta property="og:image" content="assets/app-icon.png">
+  <meta property="og:url" content="https://sgoley.github.io/Better-FRED/">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" type="image/png" href="assets/app-icon.png">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Navigation Header -->
+  <header class="site-header">
+    <div class="container nav-wrapper">
+      <a href="#" class="nav-brand">
+        <img src="assets/app-icon.png" alt="BetterEcon Icon" class="brand-icon">
+        <span>BetterEcon</span>
+        <span class="brand-badge">iOS 17+</span>
+      </a>
+
+      <nav>
+        <ul class="nav-links">
+          <li><a href="#features">Features</a></li>
+          <li><a href="#guide">User Guide</a></li>
+          <li><a href="#security">Security & BYOK</a></li>
+          <li><a href="#disclosures">Disclosures</a></li>
+          <li><a href="#privacy">Privacy</a></li>
+          <li><a href="#license">License</a></li>
+          <li>
+            <a href="https://github.com/sgoley/Better-FRED" target="_blank" rel="noopener" class="github-btn">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+              </svg>
+              <span>GitHub</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container hero-grid">
+      <div class="hero-content">
+        <div class="hero-pill">
+          <span class="pulse-dot"></span>
+          <span>APP STORE READY • SWIFTUI & SWIFT CHARTS</span>
+        </div>
+        <h1>High-Resolution <span class="hero-gradient">Macroeconomic</span> Intelligence.</h1>
+        <p class="hero-desc">
+          Explore, compare, and monitor over 800,000 Federal Reserve FRED® economic data series with authentic benchmark datasets, raw Swift Charts fidelity, and zero-knowledge on-device key security.
+        </p>
+
+        <div class="hero-cta-group">
+          <a href="#guide" class="btn-primary">
+            <span>Explore User Guide</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+          <a href="#privacy" class="btn-secondary">
+            <span>Privacy Policy</span>
+          </a>
+        </div>
+
+        <div class="hero-badges">
+          <div class="hero-badge-item">
+            <svg width="16" height="16" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+            <span>Hardware Keychain BYOK</span>
+          </div>
+          <div class="hero-badge-item">
+            <svg width="16" height="16" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+            <span>Zero Tracking or Telemetry</span>
+          </div>
+          <div class="hero-badge-item">
+            <svg width="16" height="16" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+            <span>No Server Intermediary</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Interactive Phone Mockup Card -->
+      <div class="hero-visual">
+        <div class="device-mockup">
+          <div class="device-screen">
+            <div class="mockup-header">
+              <div>
+                <div class="mockup-label">BETTER US ECON</div>
+                <div class="mockup-title">Your economy</div>
+              </div>
+              <div class="mockup-status-pill">
+                <span class="pulse-dot"></span>
+                <span>Live API</span>
+              </div>
+            </div>
+
+            <!-- Spotlight Benchmark Card -->
+            <div class="spotlight-card">
+              <div class="spotlight-header">
+                <span>30-YEAR FIXED MORTGAGE</span>
+                <span>Weekly</span>
+              </div>
+              <div class="spotlight-value">6.76%</div>
+              <div class="spotlight-delta">+0.05% vs prior wk</div>
+
+              <!-- Interactive Demo Sparkline -->
+              <svg class="mockup-chart-svg" viewBox="0 0 290 70">
+                <defs>
+                  <linearGradient id="chartGrad" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0%" stop-color="#12c7b3" stop-opacity="0.4"/>
+                    <stop offset="100%" stop-color="#12c7b3" stop-opacity="0.0"/>
+                  </linearGradient>
+                </defs>
+                <path class="mockup-dynamic-fill" d="M 10 50 Q 70 30 140 45 T 280 15 L 280 65 L 10 65 Z" fill="url(#chartGrad)"/>
+                <path class="mockup-dynamic-path" d="M 10 50 Q 70 30 140 45 T 280 15" fill="none" stroke="#12c7b3" stroke-width="2.5" stroke-linecap="round"/>
+                <circle cx="280" cy="15" r="4" fill="#c7e01f"/>
+              </svg>
+
+              <div style="display: flex; gap: 6px; justify-content: flex-end; margin-top: 4px;">
+                <button class="mockup-range-pill active" style="background: rgba(255,255,255,0.1); border:none; color:#fff; font-size:0.65rem; padding:2px 6px; border-radius:4px; cursor:pointer;">1Y</button>
+                <button class="mockup-range-pill" style="background: rgba(255,255,255,0.1); border:none; color:#8ba2c4; font-size:0.65rem; padding:2px 6px; border-radius:4px; cursor:pointer;">5Y</button>
+                <button class="mockup-range-pill" style="background: rgba(255,255,255,0.1); border:none; color:#8ba2c4; font-size:0.65rem; padding:2px 6px; border-radius:4px; cursor:pointer;">Max</button>
+              </div>
+            </div>
+
+            <!-- Mini Watchlist Stack -->
+            <div class="mockup-card-grid">
+              <div class="mockup-card">
+                <div class="mockup-card-id">FEDFUNDS</div>
+                <div class="mockup-card-val">3.63%</div>
+                <div class="mockup-card-delta">Target Rate</div>
+              </div>
+              <div class="mockup-card">
+                <div class="mockup-card-id">DGS10</div>
+                <div class="mockup-card-val">4.95%</div>
+                <div class="mockup-card-delta">10Y Treasury</div>
+              </div>
+              <div class="mockup-card">
+                <div class="mockup-card-id">UNRATE</div>
+                <div class="mockup-card-val">4.10%</div>
+                <div class="mockup-card-delta">Unemployment</div>
+              </div>
+              <div class="mockup-card">
+                <div class="mockup-card-id">CPIAUCSL</div>
+                <div class="mockup-card-val">334.13</div>
+                <div class="mockup-card-delta">Consumer Price</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Feature Highlights -->
+  <section class="section" id="features">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Capabilities</span>
+        <h2 class="section-title">Engineered for Macro Accuracy</h2>
+        <p class="section-subtitle">A high-resolution mobile workstation crafted specifically for economists, analysts, and traders.</p>
+      </div>
+
+      <div class="feature-grid">
+        <div class="feature-card">
+          <div class="feature-icon-wrapper">
+            <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <h3>Zero-Knowledge BYOK</h3>
+          <p>Your FRED® API key is saved exclusively in the iOS Secure Keychain (<code>kSecClassGenericPassword</code>). Requests travel directly to St. Louis Fed servers with no intermediary logging.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon-wrapper">
+            <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18M7 16l4-8 4 6 5-10"/></svg>
+          </div>
+          <h3>Raw Unsmoothed Fidelity</h3>
+          <p>Charts default to authentic, unadulterated linear observations with fine stroke weighting. Switch on running-window moving averages anytime with the built-in smooth toggle.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon-wrapper">
+            <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 10l-4 4-6-6 4-4 6 6zM21 3l-6 6M3 21l6-6"/></svg>
+          </div>
+          <h3>Interactive Scrubber HUD</h3>
+          <p>Touch and drag anywhere across the chart to inspect precise historical values, dates, and period-over-period deltas with continuous haptic feedback.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon-wrapper">
+            <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+          </div>
+          <h3>Landscape Pro Trading Desk</h3>
+          <p>Rotate your iPhone or iPad horizontally for an edge-to-edge trading desk perspective, replacing vertical scroll with a full-bleed interactive canvas and pro toolbar.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon-wrapper">
+            <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M3 15h18M9 3v18"/></svg>
+          </div>
+          <h3>Tabular View & Summary Stats</h3>
+          <p>Instantly switch between Chart and Table views. Search observations by date or value, sort chronologically, view High/Low/Avg summaries, and copy TSV data.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon-wrapper">
+            <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+          </div>
+          <h3>Retina PNG & Clipboard Export</h3>
+          <p>Export publication-ready dark mode chart cards at 3x retina resolution with source attribution, or copy directly to your clipboard in a single tap.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- User Guide Section -->
+  <section class="section" id="guide">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Documentation</span>
+        <h2 class="section-title">User Guide & Setup</h2>
+        <p class="section-subtitle">Everything you need to run, configure, and operate Better US Econ Data.</p>
+      </div>
+
+      <div class="guide-layout">
+        <aside class="guide-sidebar">
+          <ul class="guide-menu">
+            <li><a href="#guide-install" class="active">1. Installation & Build</a></li>
+            <li><a href="#guide-key">2. Getting a Free FRED® Key</a></li>
+            <li><a href="#guide-settings">3. In-App Key Configuration</a></li>
+            <li><a href="#guide-navigation">4. Navigating Charts & HUD</a></li>
+            <li><a href="#guide-desk">5. Landscape Workstation</a></li>
+          </ul>
+        </aside>
+
+        <main class="guide-content">
+          <!-- Step 1 -->
+          <div class="guide-step-card" id="guide-install">
+            <div class="step-badge">1</div>
+            <h3>Installation & Local Build</h3>
+            <p>Better-FRED is built for iOS 17.0+ using pure Swift, SwiftUI, and Swift Charts. You can build it directly with Xcode or regenerate the project file using XcodeGen:</p>
+
+            <div class="code-block">
+              <code>git clone https://github.com/sgoley/Better-FRED.git
+cd Better-FRED
+xcodegen generate --spec project.yml
+open Better-FRED.xcodeproj</code>
+              <button class="copy-btn" data-code="git clone https://github.com/sgoley/Better-FRED.git && cd Better-FRED && xcodegen generate --spec project.yml && open Better-FRED.xcodeproj">Copy</button>
+            </div>
+
+            <p>Select the <strong>Better-FRED</strong> scheme, pick any iOS 17+ Simulator (e.g. iPhone 16 Pro), and press <strong>Cmd + R</strong> to run.</p>
+          </div>
+
+          <!-- Step 2 -->
+          <div class="guide-step-card" id="guide-key">
+            <div class="step-badge">2</div>
+            <h3>Getting a Free FRED® API Key</h3>
+            <p>The Federal Reserve Bank of St. Louis provides free, permanent API keys to developers, analysts, and students. A key is not required to explore preview data, but unlocks live queries across 800,000+ time series:</p>
+
+            <ul>
+              <li>Visit the <a href="https://fred.stlouisfed.org" target="_blank" rel="noopener">St. Louis Fed FRED® Website</a> and create a free account.</li>
+              <li>Go to <a href="https://fred.stlouisfed.org/docs/api/api_key.html" target="_blank" rel="noopener">My Account &gt; API Keys</a> and request a key.</li>
+              <li>Keys are issued immediately as a 32-character hexadecimal string with a generous 120 requests/minute quota.</li>
+            </ul>
+
+            <div class="callout">
+              <h4>Development Convenience: Auto-Seeding</h4>
+              <p>During local development, you can place your key in a gitignored <code>.env</code> file (<code>FRED_API_KEY=your_key</code>) or an Xcode scheme environment variable. The app will automatically seed Keychain on first launch!</p>
+            </div>
+          </div>
+
+          <!-- Step 3 -->
+          <div class="guide-step-card" id="guide-settings">
+            <div class="step-badge">3</div>
+            <h3>In-App Key Configuration & Live Verification</h3>
+            <p>Better-FRED features a dedicated Settings screen accessible from the <strong>Settings tab</strong> or by tapping the <strong>Live API / Preview pill</strong> on the Overview dashboard.</p>
+
+            <ul>
+              <li><strong>Masked Key Input</strong>: Paste your 32-character key from the clipboard or toggle visibility.</li>
+              <li><strong>Test Connection Button</strong>: Performs a live ping against FRED observations before saving, verifying your key is active.</li>
+              <li><strong>Save Key</strong>: Safely writes to the iOS Secure Keychain and refreshes your watchlist with live observations.</li>
+              <li><strong>Remove Key</strong>: Seamlessly return to offline preview mode at any time.</li>
+            </ul>
+          </div>
+
+          <!-- Step 4 -->
+          <div class="guide-step-card" id="guide-navigation">
+            <div class="step-badge">4</div>
+            <h3>Navigating Charts, Recessions & Zoom</h3>
+            <p>Every series detail screen is equipped with professional inspection controls:</p>
+
+            <ul>
+              <li><strong>Interactive Scrubber</strong>: Drag horizontally across any chart to inspect exact readings and period deltas in the floating HUD.</li>
+              <li><strong>NBER Recessions</strong>: Toggle gray recession bands spanning 1973 through the 2020 COVID-19 shock.</li>
+              <li><strong>Range Selectors</strong>: Switch between <code>1Y</code>, <code>5Y</code>, <code>10Y</code>, and <code>Max</code> time horizons.</li>
+              <li><strong>Step Zoom (<code>+</code> / <code>-</code>)</strong>: Dynamically pinch or tap zoom buttons to focus on specific economic cycles.</li>
+            </ul>
+          </div>
+
+          <!-- Step 5 -->
+          <div class="guide-step-card" id="guide-desk">
+            <div class="step-badge">5</div>
+            <h3>Landscape Trading Desk & Exports</h3>
+            <p>Turn your device sideways for an edge-to-edge landscape workstation. Tap the <strong>Share</strong> button to export 3x retina PNG images with source attribution, or use the <strong>Table</strong> mode to copy raw TSV numbers directly into Excel or Numbers.</p>
+          </div>
+        </main>
+      </div>
+    </div>
+  </section>
+
+  <!-- Security & Architecture -->
+  <section class="section" id="security">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Privacy & Trust</span>
+        <h2 class="section-title">Zero-Knowledge Architecture</h2>
+        <p class="section-subtitle">How Better US Econ Data guarantees absolute privacy and direct-to-FRED security.</p>
+      </div>
+
+      <div class="legal-box">
+        <h3>Hardware-Backed On-Device Storage</h3>
+        <p>When you save your FRED® API key in Better-FRED, it is stored using Apple's <code>kSecClassGenericPassword</code> with <code>kSecAttrAccessibleAfterFirstUnlock</code> accessibility. This stores your credential inside the hardware-backed Secure Enclave on your device.</p>
+
+        <h3>Direct-to-Fed Network Communication</h3>
+        <p>There are no proxy servers, no intermediate relay nodes, and no analytics collection. All HTTPS requests originate on your device and terminate directly at <code>https://api.stlouisfed.org</code> over encrypted TLS. Neither the developer nor any third party can inspect your search queries or watchlist series.</p>
+
+        <h3>Apple Privacy Manifest Compliance</h3>
+        <p>The repository bundles an official Apple Privacy Manifest (<code>PrivacyInfo.xcprivacy</code>) adhering strictly to App Store requirements:</p>
+        <ul>
+          <li><strong>Tracking</strong>: <code>false</code> (No tracking domains)</li>
+          <li><strong>Data Collected</strong>: None</li>
+          <li><strong>Accessed APIs</strong>: <code>NSPrivacyAccessedAPICategoryUserDefaults</code> declared with reason <code>CA92.1</code> solely for local display preferences and saved watchlist series IDs.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Legal Disclosures & FRED Attribution -->
+  <section class="section" id="disclosures">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Compliance</span>
+        <h2 class="section-title">Disclosures & Attribution</h2>
+        <p class="section-subtitle">Official trademark notices and Federal Reserve API terms of use.</p>
+      </div>
+
+      <div class="legal-box">
+        <h3>FRED® Trademark Notice</h3>
+        <p><strong>FRED®</strong> is a registered trademark of the <strong>Federal Reserve Bank of St. Louis</strong>.</p>
+        <p>This application uses the Federal Reserve Bank of St. Louis FRED® API but is <strong>not endorsed, certified, or sponsored</strong> by the Federal Reserve Bank of St. Louis or the Federal Reserve System.</p>
+
+        <h3>Data Sources & Accuracy Disclaimer</h3>
+        <p>Economic time series displayed in Better-FRED are compiled and published by original statistical agencies (including the U.S. Bureau of Labor Statistics, U.S. Bureau of Economic Analysis, Freddie Mac, and the Board of Governors of the Federal Reserve System) and distributed via FRED®. Data is provided "as is" for informational and educational research purposes without warranty of any kind.</p>
+
+        <h3>Non-Investment Advice</h3>
+        <p>Better-FRED is an economic data viewer and visualization utility. Content provided within the app or documentation does not constitute financial, investment, legal, or tax advice. No observation or chart is a recommendation to buy, sell, or hold any security, commodity, or financial instrument.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Privacy Policy -->
+  <section class="section" id="privacy">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">App Store Verification</span>
+        <h2 class="section-title">Privacy Policy</h2>
+        <p class="section-subtitle">Official privacy policy for Better US Econ Data (BetterEcon) App Store submission.</p>
+      </div>
+
+      <div class="legal-box">
+        <p><strong>Effective Date:</strong> September 13, 2026</p>
+        <p>Better US Econ Data ("BetterEcon") is designed with a privacy-first, zero-knowledge architecture. We believe your economic research and indicator monitoring are strictly your own business.</p>
+
+        <h3>1. Information Collection and Telemetry</h3>
+        <ul>
+          <li><strong>No Account Required</strong>: You do not need to create an account, log in, or provide personal information to use the application.</li>
+          <li><strong>Zero Tracking or Analytics</strong>: The app contains no third-party tracking libraries, advertising SDKs, crash-reporting telemetry, or device fingerprinting.</li>
+          <li><strong>No Intermediary Server</strong>: The app does not operate a backend server. Network requests travel directly from your device to the Federal Reserve Bank of St. Louis.</li>
+        </ul>
+
+        <h3>2. API Key Management</h3>
+        <p>Your 32-character FRED® API key is saved exclusively in your device's <strong>iOS Secure Keychain</strong>. It is never logged or transmitted to any third-party server, and only sent directly to <code>api.stlouisfed.org</code> over TLS to authorize data requests. You can remove your key at any time.</p>
+
+        <h3>3. Local Storage</h3>
+        <p>Saved watchlist series IDs and view configurations are stored locally on your device using standard iOS <code>UserDefaults</code>. This data never leaves your device.</p>
+
+        <h3>4. Third-Party Privacy Practices</h3>
+        <p>When live data fetching is active, the app communicates with the Federal Reserve Bank of St. Louis FRED® API. Their data practices are governed by the <a href="https://www.stlouisfed.org/privacy-policy" target="_blank" rel="noopener">St. Louis Fed Privacy Policy</a>.</p>
+
+        <h3>5. Contact & Support</h3>
+        <p>If you have questions regarding this Privacy Policy or need support, please submit an issue on the <a href="https://github.com/sgoley/Better-FRED/issues" target="_blank" rel="noopener">GitHub repository</a>.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- License Section -->
+  <section class="section" id="license">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Open Source</span>
+        <h2 class="section-title">MIT License</h2>
+        <p class="section-subtitle">Better US Econ Data is open-source software licensed under the MIT License.</p>
+      </div>
+
+      <div class="legal-box" style="font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 0.88rem;">
+        <p>Copyright (c) 2026 Scott Goley</p>
+        <br>
+        <p>Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:</p>
+        <br>
+        <p>The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.</p>
+        <br>
+        <p>THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h4>Better US Econ Data (BetterEcon)</h4>
+          <p>Native SwiftUI macroeconomic intelligence client with BYOK security and authentic FRED® datasets.</p>
+        </div>
+        <div class="footer-col">
+          <h5>Documentation</h5>
+          <ul>
+            <li><a href="#guide">User Guide</a></li>
+            <li><a href="#features">Features</a></li>
+            <li><a href="#security">Keychain BYOK</a></li>
+            <li><a href="#disclosures">Disclosures</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Legal & Repository</h5>
+          <ul>
+            <li><a href="#privacy">Privacy Policy</a></li>
+            <li><a href="#license">MIT License</a></li>
+            <li><a href="https://github.com/sgoley/Better-FRED" target="_blank" rel="noopener">GitHub Repository</a></li>
+            <li><a href="https://fred.stlouisfed.org" target="_blank" rel="noopener">FRED® St. Louis Fed</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; 2026 Scott Goley. Open source under the MIT License.</div>
+        <div style="font-size: 0.78rem;">FRED® is a registered trademark of the Federal Reserve Bank of St. Louis.</div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

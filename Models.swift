@@ -45,18 +45,19 @@ enum SampleData {
         let calendar = Calendar.current
         let base: Double = switch series.id {
         case "UNRATE": 4.1
-        case "FEDFUNDS", "DFF": 4.33
-        case "DGS10": 4.25
-        case "GDPC1": 22_000
-        default: 313.2
+        case "FEDFUNDS", "DFF": 3.63
+        case "DGS10": 4.95
+        case "GDPC1": 24_200
+        default: 334.1
         }
-        let isDaily = series.id == "DFF"
-        let pointCount = series.id == "GDPC1" ? 80 : (isDaily ? 1825 : 180)
+        let isDaily = series.id == "DFF" || series.id == "DGS10"
+        let pointCount = series.id == "GDPC1" ? 40 : (isDaily ? 365 : 120)
         return (0..<pointCount).map { index in
             let date = isDaily ? calendar.date(byAdding: .day, value: index - pointCount + 1, to: .now)! : calendar.date(byAdding: .month, value: index - pointCount + 1, to: .now)!
-            let wave = sin(Double(index) / (isDaily ? 45 : 3.5)) * (series.id == "GDPC1" ? 250 : (isDaily ? 0.10 : 0.18))
-            let trend = Double(index) * (series.id == "GDPC1" ? 60 : (isDaily ? 0.0005 : 0.12))
-            return Observation(date: date, value: base + trend + wave)
+            let offsetFromEnd = Double(index - (pointCount - 1))
+            let cycle = sin(Double(index) / (isDaily ? 25.0 : 5.0)) * (series.id == "GDPC1" ? 180.0 : 0.25)
+            let drift = offsetFromEnd * (series.id == "GDPC1" ? -25.0 : (isDaily ? 0.0008 : 0.004))
+            return Observation(date: date, value: Swift.max(0.05, base + cycle + drift))
         }
     }
 }

@@ -15,6 +15,7 @@ struct RootView: View {
                 ExploreView().tabItem { Label("Explore", systemImage: "magnifyingglass") }
                 CompareView().tabItem { Label("Compare", systemImage: "chart.xyaxis.line") }
                 SavedView().tabItem { Label("Saved", systemImage: "bookmark") }
+                SettingsView().tabItem { Label("Settings", systemImage: "gearshape") }
             }
             .tint(BetterTheme.cyan)
             .background(BetterTheme.background)
@@ -24,6 +25,7 @@ struct RootView: View {
 
 struct DashboardView: View {
     @EnvironmentObject private var model: AppModel
+    @State private var showSettings: Bool = false
 
     var mortgageSeries: FREDSeries? {
         model.series(with: "MORTGAGE30US") ?? SampleData.series.first { $0.id == "MORTGAGE30US" }
@@ -39,15 +41,30 @@ struct DashboardView: View {
                     VStack(alignment: .leading, spacing: 18) {
                         HStack(alignment: .center) {
                             VStack(alignment: .leading, spacing: 4) {
-                                Text("BETTER-FRED").font(.caption.weight(.bold)).tracking(1.4).foregroundStyle(BetterTheme.mutedOnNavy)
+                                Text("BETTER US ECON").font(.caption.weight(.bold)).tracking(1.4).foregroundStyle(BetterTheme.mutedOnNavy)
                                 Text("Your economy").font(.largeTitle.weight(.bold)).foregroundStyle(.white)
                             }
                             Spacer()
-                            Image(systemName: "waveform.path.ecg")
-                                .font(.title3.weight(.semibold))
-                                .foregroundStyle(BetterTheme.navy)
-                                .padding(11)
-                                .background(BetterTheme.cyan, in: Circle())
+                            Button {
+                                showSettings = true
+                            } label: {
+                                HStack(spacing: 6) {
+                                    Circle()
+                                        .fill(model.isLive ? BetterTheme.lime : BetterTheme.coral)
+                                        .frame(width: 8, height: 8)
+                                    Text(model.isLive ? "Live API" : "Preview")
+                                        .font(.caption2.weight(.bold))
+                                        .foregroundStyle(.white)
+                                    Image(systemName: "gearshape.fill")
+                                        .font(.caption.weight(.bold))
+                                        .foregroundStyle(BetterTheme.cyan)
+                                }
+                                .padding(.horizontal, 11)
+                                .padding(.vertical, 7)
+                                .background(BetterTheme.navy.opacity(0.85), in: Capsule())
+                                .overlay(Capsule().stroke(BetterTheme.hairline, lineWidth: 1))
+                            }
+                            .buttonStyle(.plain)
                         }
 
                         Text("Real-time signals with original high-resolution series detail.")
@@ -93,15 +110,17 @@ struct DashboardView: View {
             .background(BetterTheme.background)
             .toolbar(.hidden, for: .navigationBar)
             .navigationDestination(for: FREDSeries.self) { SeriesDetailView(series: $0) }
+            .sheet(isPresented: $showSettings) { SettingsView() }
         }
     }
 }
 
 // MARK: - Dedicated Home Screen Mortgage Rate Spotlight
 struct MortgageSpotlightCard: View {
+    @EnvironmentObject private var model: AppModel
     let series: FREDSeries
     private var observations: [Observation] {
-        SampleData.observations(for: series)
+        model.cachedSnapshot(for: series.id)?.observations ?? SampleData.observations(for: series)
     }
     private var latest: Observation? { observations.last }
     private var prev: Observation? { observations.dropLast().last }
@@ -219,9 +238,10 @@ struct MortgageSpotlightCard: View {
 }
 
 struct SeriesCard: View {
+    @EnvironmentObject private var model: AppModel
     let series: FREDSeries
     private var snapshot: SeriesSnapshot {
-        SeriesSnapshot(series: series, observations: SampleData.observations(for: series))
+        model.cachedSnapshot(for: series.id) ?? SeriesSnapshot(series: series, observations: SampleData.observations(for: series))
     }
 
     var body: some View {
@@ -275,6 +295,11 @@ struct SeriesCard: View {
 
                     Text("View series").font(.caption2.weight(.semibold)).foregroundStyle(BetterTheme.navy)
                 }
+            }
+        }
+        .task {
+            if model.cachedSnapshot(for: series.id) == nil {
+                _ = try? await model.snapshot(for: series)
             }
         }
     }
