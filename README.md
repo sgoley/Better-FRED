@@ -57,6 +57,6 @@ Data is retrieved directly from original public sources and provided "as is" for
 
 ## Documentation & Privacy Policy
 
-- **Interactive Web Portal**: https://sgoley.github.io/Better-FRED/
-- **Privacy Policy**: https://sgoley.github.io/Better-FRED/privacy.html
+- **Interactive Web Portal**: https://sgoley.github.io/BetterEcon/
+- **Privacy Policy**: https://sgoley.github.io/BetterEcon/privacy.html
 - **License**: MIT License (see [LICENSE](LICENSE))
