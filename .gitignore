@@ -1,0 +1,28 @@
+# Xcode and Swift build products
+DerivedData/
+build/
+.build/
+*.xcarchive
+
+# Xcode per-user state
+xcuserdata/
+*.xcuserstate
+
+# macOS/editor noise
+.DS_Store
+*.swp
+*.swo
+
+# Local secrets and machine-specific configuration
+.env
+.env.*
+!.env.example
+*.xcconfig
+!.xcconfig.example
+secrets/
+Keys/
+credentials/
+
+# Local FRED/API configuration
+FRED_API_KEY
+fred-api-key.txt

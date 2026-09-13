@@ -1,0 +1,412 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1E8E51DB88A38841F2574679 /* BetterFREDApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3747B70F8AEB7FF945F3F3F1 /* BetterFREDApp.swift */; };
+		360FE735245E0A98403E3D9F /* DesignSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CB069584FA97693CE884752 /* DesignSystem.swift */; };
+		59B9D13000DAA4156C315C6D /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 90E32DCC3848ECC9146E2332 /* README.md */; };
+		89B853687FB934065E7A16F7 /* CompareView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42AF71634947AE9A0237D0A8 /* CompareView.swift */; };
+		8AE0720EFCD2D50646081CF3 /* Services.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0888A7FDC087E93B791650E /* Services.swift */; };
+		9BFAFBE142D04679BAA8DAC2 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3906AEFD0570775ECE717720 /* Models.swift */; };
+		9EC64DE55EF4214885573BCE /* SeriesDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABCA7882E5F0C7C059F0145C /* SeriesDetailView.swift */; };
+		C7D376474C472B445F32F42D /* project.yml in Resources */ = {isa = PBXBuildFile; fileRef = DAEF8ABF105319CD7A24603D /* project.yml */; };
+		D925B6D47E1DCD04547914E0 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6719BE105108FDD64037EC /* RootView.swift */; };
+		F13140EF43C2D470FD1EC6DD /* BetterFREDWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9E3854229B1F0208FD22941 /* BetterFREDWidget.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		3747B70F8AEB7FF945F3F3F1 /* BetterFREDApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BetterFREDApp.swift; sourceTree = "<group>"; };
+		3906AEFD0570775ECE717720 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
+		3B1AF7F5D01B6CDFEE37B647 /* Better-FRED.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = "Better-FRED.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		42AF71634947AE9A0237D0A8 /* CompareView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompareView.swift; sourceTree = "<group>"; };
+		5B6719BE105108FDD64037EC /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
+		5DCED9B3DA9DCEEF05587622 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		7CB069584FA97693CE884752 /* DesignSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignSystem.swift; sourceTree = "<group>"; };
+		90E32DCC3848ECC9146E2332 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		9C7EB02CF1E68DBD0CE9DA25 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		ABCA7882E5F0C7C059F0145C /* SeriesDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeriesDetailView.swift; sourceTree = "<group>"; };
+		B9EF52C0AD4D929A059BFADE /* .gitignore */ = {isa = PBXFileReference; path = .gitignore; sourceTree = "<group>"; };
+		D9E3854229B1F0208FD22941 /* BetterFREDWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BetterFREDWidget.swift; sourceTree = "<group>"; };
+		DAEF8ABF105319CD7A24603D /* project.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = project.yml; sourceTree = "<group>"; };
+		E0888A7FDC087E93B791650E /* Services.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Services.swift; sourceTree = "<group>"; };
+		FFFC3B7C8B408305DC1D36D7 /* Better-FREDWidget.appex */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = "wrapper.app-extension"; path = "Better-FREDWidget.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		9CDD351588AD1C264EC45732 /* Better-FREDWidget */ = {
+			isa = PBXGroup;
+			children = (
+				D9E3854229B1F0208FD22941 /* BetterFREDWidget.swift */,
+				5DCED9B3DA9DCEEF05587622 /* Info.plist */,
+			);
+			path = "Better-FREDWidget";
+			sourceTree = "<group>";
+		};
+		C930BBFE2A660E4E5FD7A892 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3B1AF7F5D01B6CDFEE37B647 /* Better-FRED.app */,
+				FFFC3B7C8B408305DC1D36D7 /* Better-FREDWidget.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D7C132C59C14042753D12F47 /* Better-FRED */ = {
+			isa = PBXGroup;
+			children = (
+				B9EF52C0AD4D929A059BFADE /* .gitignore */,
+				3747B70F8AEB7FF945F3F3F1 /* BetterFREDApp.swift */,
+				42AF71634947AE9A0237D0A8 /* CompareView.swift */,
+				7CB069584FA97693CE884752 /* DesignSystem.swift */,
+				9C7EB02CF1E68DBD0CE9DA25 /* Info.plist */,
+				3906AEFD0570775ECE717720 /* Models.swift */,
+				DAEF8ABF105319CD7A24603D /* project.yml */,
+				90E32DCC3848ECC9146E2332 /* README.md */,
+				5B6719BE105108FDD64037EC /* RootView.swift */,
+				ABCA7882E5F0C7C059F0145C /* SeriesDetailView.swift */,
+				E0888A7FDC087E93B791650E /* Services.swift */,
+			);
+			name = "Better-FRED";
+			path = .;
+			sourceTree = "<group>";
+		};
+		D9A8FCCB6C64F0F0C86DAAF3 = {
+			isa = PBXGroup;
+			children = (
+				D7C132C59C14042753D12F47 /* Better-FRED */,
+				9CDD351588AD1C264EC45732 /* Better-FREDWidget */,
+				C930BBFE2A660E4E5FD7A892 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		11516551BBD02BCB70C7BE5D /* Better-FREDWidget */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1167E757A79405CB7AD90422 /* Build configuration list for PBXNativeTarget "Better-FREDWidget" */;
+			buildPhases = (
+				879A9F2C71E1509769F823F1 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Better-FREDWidget";
+			packageProductDependencies = (
+			);
+			productName = "Better-FREDWidget";
+			productReference = FFFC3B7C8B408305DC1D36D7 /* Better-FREDWidget.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+		F999A7FD3CA1E6EC019CA3A1 /* Better-FRED */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 02344E4985865CCCA71C4D75 /* Build configuration list for PBXNativeTarget "Better-FRED" */;
+			buildPhases = (
+				BBC3369EA9CCBEA2C025A46D /* Sources */,
+				319AD83D7AC48E1B2FF011D7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Better-FRED";
+			packageProductDependencies = (
+			);
+			productName = "Better-FRED";
+			productReference = 3B1AF7F5D01B6CDFEE37B647 /* Better-FRED.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		1F84A257DAEBD054785FEEF0 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+				};
+			};
+			buildConfigurationList = 21A8F1CE3330E08CF13C0AC1 /* Build configuration list for PBXProject "Better-FRED" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = D9A8FCCB6C64F0F0C86DAAF3;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = C930BBFE2A660E4E5FD7A892 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F999A7FD3CA1E6EC019CA3A1 /* Better-FRED */,
+				11516551BBD02BCB70C7BE5D /* Better-FREDWidget */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		319AD83D7AC48E1B2FF011D7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				59B9D13000DAA4156C315C6D /* README.md in Resources */,
+				C7D376474C472B445F32F42D /* project.yml in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		879A9F2C71E1509769F823F1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F13140EF43C2D470FD1EC6DD /* BetterFREDWidget.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BBC3369EA9CCBEA2C025A46D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1E8E51DB88A38841F2574679 /* BetterFREDApp.swift in Sources */,
+				89B853687FB934065E7A16F7 /* CompareView.swift in Sources */,
+				360FE735245E0A98403E3D9F /* DesignSystem.swift in Sources */,
+				9BFAFBE142D04679BAA8DAC2 /* Models.swift in Sources */,
+				D925B6D47E1DCD04547914E0 /* RootView.swift in Sources */,
+				9EC64DE55EF4214885573BCE /* SeriesDetailView.swift in Sources */,
+				8AE0720EFCD2D50646081CF3 /* Services.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		3C6182CD3BC5A193F1482A36 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "Better-FREDWidget/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.betterfred.app.widget;
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.9;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		67874729BCC1EB8BF4273D40 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		905EB999361021C165A193E1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.betterfred.app;
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.9;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		A0047699F2B3E43F446C9EF1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		AAC2A9CF361A0F58B52F2499 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.betterfred.app;
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.9;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		D6EF4DE85DE56E75C589A2B7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "Better-FREDWidget/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.betterfred.app.widget;
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.9;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		02344E4985865CCCA71C4D75 /* Build configuration list for PBXNativeTarget "Better-FRED" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AAC2A9CF361A0F58B52F2499 /* Debug */,
+				905EB999361021C165A193E1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		1167E757A79405CB7AD90422 /* Build configuration list for PBXNativeTarget "Better-FREDWidget" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D6EF4DE85DE56E75C589A2B7 /* Debug */,
+				3C6182CD3BC5A193F1482A36 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		21A8F1CE3330E08CF13C0AC1 /* Build configuration list for PBXProject "Better-FRED" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				67874729BCC1EB8BF4273D40 /* Debug */,
+				A0047699F2B3E43F446C9EF1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 1F84A257DAEBD054785FEEF0 /* Project object */;
+}

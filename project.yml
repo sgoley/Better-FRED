@@ -1,0 +1,36 @@
+name: Better-FRED
+options:
+  bundleIdPrefix: com.betterfred
+  deploymentTarget:
+    iOS: "17.0"
+targets:
+  Better-FRED:
+    type: application
+    platform: iOS
+    sources:
+      - path: .
+        excludes:
+          - Better-FREDWidget/**
+          - "*.xcodeproj/**"
+    settings:
+      PRODUCT_BUNDLE_IDENTIFIER: com.betterfred.app
+      SWIFT_VERSION: 5.9
+    info:
+      path: Info.plist
+      properties:
+        CFBundleDisplayName: Better-FRED
+        UILaunchScreen: {}
+  Better-FREDWidget:
+    type: app-extension
+    platform: iOS
+    sources: [Better-FREDWidget]
+    settings:
+      PRODUCT_BUNDLE_IDENTIFIER: com.betterfred.app.widget
+      SWIFT_VERSION: 5.9
+    info:
+      path: Better-FREDWidget/Info.plist
+      properties:
+        CFBundleDisplayName: Better-FRED Widget
+        NSExtension:
+          NSExtensionPointIdentifier: com.apple.widgetkit-extension
+          NSExtensionPrincipalClass: $(PRODUCT_MODULE_NAME).BetterFREDWidgetBundle
