@@ -32,6 +32,31 @@ The `project.yml` file is also included for regenerating the project with XcodeG
 xcodegen generate --spec project.yml
 ```
 
-The app target supports series search, watchlist cards, responsive Swift Charts, range switching, and CSV downloads through the native iOS share sheet. The widget target provides a WidgetKit starting point.
+## Data Attribution & Legal Disclosures
 
-FRED attribution and API terms should be reviewed before distribution.
+### Official FRED® API Attribution
+
+> **"This product uses the FRED® API but is not endorsed or certified by the Federal Reserve Bank of St. Louis."**
+
+### Trademark Notice
+
+**FRED®** is a registered trademark of the **Federal Reserve Bank of St. Louis**.
+
+### Data Sources & Link Back
+
+All economic time series displayed in Better US Econ Data are compiled and published by original statistical agencies and distributed via the Federal Reserve Bank of St. Louis Economic Data service ([FRED®](https://fred.stlouisfed.org)):
+
+- **St. Louis Fed FRED® Homepage**: https://fred.stlouisfed.org
+- **FRED® API Documentation & Terms**: https://fred.stlouisfed.org/docs/api/terms_of_use.html
+- **Direct Series Links**: In-app series detail views and data cards link directly to their canonical source page on FRED (e.g., [`https://fred.stlouisfed.org/series/MORTGAGE30US`](https://fred.stlouisfed.org/series/MORTGAGE30US), [`https://fred.stlouisfed.org/series/UNRATE`](https://fred.stlouisfed.org/series/UNRATE), [`https://fred.stlouisfed.org/series/CPIAUCSL`](https://fred.stlouisfed.org/series/CPIAUCSL)).
+- **Primary Source Agencies**: Datasets originate from source institutions including Freddie Mac, the U.S. Bureau of Labor Statistics (BLS), the U.S. Bureau of Economic Analysis (BEA), and the Board of Governors of the Federal Reserve System.
+
+### Accuracy & Non-Investment Advice Disclaimer
+
+Data is retrieved directly from original public sources and provided "as is" for research, educational, and informational purposes only. Better US Econ Data is an analytical visualization utility and does not constitute financial, investment, legal, or tax advice.
+
+## Documentation & Privacy Policy
+
+- **Interactive Web Portal**: https://sgoley.github.io/Better-FRED/
+- **Privacy Policy**: https://sgoley.github.io/Better-FRED/privacy.html
+- **License**: MIT License (see [LICENSE](LICENSE))
