@@ -120,4 +120,22 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   });
+
+  // Showcase tabs switcher
+  const tabs = document.querySelectorAll('.showcase-tab');
+  const items = document.querySelectorAll('.showcase-item');
+
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      const target = tab.getAttribute('data-target');
+      tabs.forEach(t => t.classList.remove('active'));
+      items.forEach(item => item.classList.remove('active'));
+
+      tab.classList.add('active');
+      const activeItem = document.getElementById(target);
+      if (activeItem) {
+        activeItem.classList.add('active');
+      }
+    });
+  });
 });

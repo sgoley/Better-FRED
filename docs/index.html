@@ -37,6 +37,7 @@
       <nav class="nav-menu" id="nav-menu">
         <ul class="nav-links">
           <li><a href="#features">Features</a></li>
+          <li><a href="#showcase">Interface</a></li>
           <li><a href="#guide">User Guide</a></li>
           <li><a href="#security">Security & BYOK</a></li>
           <li><a href="#disclosures">Disclosures</a></li>
@@ -228,6 +229,89 @@
     </div>
   </section>
 
+  <!-- Interface Showcase Gallery -->
+  <section class="section" id="showcase">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Visual Walkthrough</span>
+        <h2 class="section-title">Authentic Native Interface</h2>
+        <p class="section-subtitle">Real screen captures on iPhone and iPad featuring Swift Charts, live inspection HUDs, and keychain configuration.</p>
+      </div>
+
+      <!-- Screenshot Tabs -->
+      <div class="showcase-tabs">
+        <button class="showcase-tab active" data-target="shot-dashboard">Dashboard</button>
+        <button class="showcase-tab" data-target="shot-chart">Interactive Chart</button>
+        <button class="showcase-tab" data-target="shot-explore">Series Search</button>
+        <button class="showcase-tab" data-target="shot-settings">Keychain Settings</button>
+        <button class="showcase-tab" data-target="shot-ipad">iPad Pro Workstation</button>
+      </div>
+
+      <!-- Screenshot Display -->
+      <div class="showcase-display">
+        <div class="showcase-item active" id="shot-dashboard">
+          <div class="showcase-card">
+            <div class="showcase-img-wrap iphone-frame">
+              <img src="assets/screenshots/screen-dashboard.jpg" alt="Overview Dashboard Screenshot" loading="lazy">
+            </div>
+            <div class="showcase-caption">
+              <h4>Overview & Key Macro Benchmarks</h4>
+              <p>Real-time market signals highlighting the 30-Year Fixed Mortgage spotlight card, week-over-week deltas, and user-customizable watchlists with instant status indicators.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="showcase-item" id="shot-chart">
+          <div class="showcase-card">
+            <div class="showcase-img-wrap iphone-frame">
+              <img src="assets/screenshots/screen-chart.jpg" alt="Swift Charts Detail Screenshot" loading="lazy">
+            </div>
+            <div class="showcase-caption">
+              <h4>High-Fidelity Swift Charts & Scrubber</h4>
+              <p>Interactive touch-and-drag scrubber HUD, NBER official recession shading bands, 1Y–Max timeframe presets, smooth/raw observation toggling, and 1-tap retina image exports.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="showcase-item" id="shot-explore">
+          <div class="showcase-card">
+            <div class="showcase-img-wrap iphone-frame">
+              <img src="assets/screenshots/screen-explore.jpg" alt="Explore Series Search Screenshot" loading="lazy">
+            </div>
+            <div class="showcase-caption">
+              <h4>Comprehensive Series Search</h4>
+              <p>Instant symbol and keyword querying across hundreds of thousands of Federal Reserve series, from CPI inflation and Fed Funds to GDP and Treasury yields.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="showcase-item" id="shot-settings">
+          <div class="showcase-card">
+            <div class="showcase-img-wrap iphone-frame">
+              <img src="assets/screenshots/screen-settings.jpg" alt="Keychain BYOK Settings Screenshot" loading="lazy">
+            </div>
+            <div class="showcase-caption">
+              <h4>Zero-Knowledge Keychain BYOK</h4>
+              <p>Direct hardware-backed Secure Enclave storage for your personal FRED® API key. Includes live connection ping testing and immediate fallback to preview mode.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="showcase-item" id="shot-ipad">
+          <div class="showcase-card ipad-layout">
+            <div class="showcase-img-wrap ipad-frame">
+              <img src="assets/screenshots/screen-ipad-chart.jpg" alt="iPad Pro Landscape Workstation Screenshot" loading="lazy">
+            </div>
+            <div class="showcase-caption">
+              <h4>Landscape Pro Trading Desk</h4>
+              <p>Optimized widescreen perspective taking full advantage of iPad and iPhone horizontal orientations for high-density multi-decade economic cycle analysis.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- User Guide Section -->
   <section class="section" id="guide">
     <div class="container">
@@ -296,6 +380,10 @@ open BetterEcon.xcodeproj</code>
               <li><strong>Save Key</strong>: Safely writes to the iOS Secure Keychain and refreshes your watchlist with live observations.</li>
               <li><strong>Remove Key</strong>: Seamlessly return to offline preview mode at any time.</li>
             </ul>
+
+            <div class="guide-screenshot-preview">
+              <img src="assets/screenshots/screen-settings.jpg" alt="In-App Settings Screen Preview" loading="lazy">
+            </div>
           </div>
 
           <!-- Step 4 -->
@@ -310,6 +398,10 @@ open BetterEcon.xcodeproj</code>
               <li><strong>Range Selectors</strong>: Switch between <code>1Y</code>, <code>5Y</code>, <code>10Y</code>, and <code>Max</code> time horizons.</li>
               <li><strong>Step Zoom (<code>+</code> / <code>-</code>)</strong>: Dynamically pinch or tap zoom buttons to focus on specific economic cycles.</li>
             </ul>
+
+            <div class="guide-screenshot-preview">
+              <img src="assets/screenshots/screen-chart.jpg" alt="Chart Inspection Preview" loading="lazy">
+            </div>
           </div>
 
           <!-- Step 5 -->
@@ -317,6 +409,10 @@ open BetterEcon.xcodeproj</code>
             <div class="step-badge">5</div>
             <h3>Landscape Trading Desk & Exports</h3>
             <p>Turn your device sideways for an edge-to-edge landscape workstation. Tap the <strong>Share</strong> button to export 3x retina PNG images with source attribution, or use the <strong>Table</strong> mode to copy raw TSV numbers directly into Excel or Numbers.</p>
+
+            <div class="guide-screenshot-preview ipad-preview">
+              <img src="assets/screenshots/screen-ipad-chart.jpg" alt="Landscape Trading Desk Preview" loading="lazy">
+            </div>
           </div>
         </main>
       </div>
