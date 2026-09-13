@@ -25,6 +25,7 @@ targets:
       properties:
         CFBundleDisplayName: BetterEcon
         CFBundleName: Better US Econ Data
+        ITSAppUsesNonExemptEncryption: false
         UILaunchScreen: {}
         UISupportedInterfaceOrientations:
           - UIInterfaceOrientationPortrait
