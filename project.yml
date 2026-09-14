@@ -10,6 +10,7 @@ targets:
     sources:
       - path: .
         excludes:
+          - .git/**
           - BetterEconWidget/**
           - "*.xcodeproj/**"
           - ".build/**"
@@ -26,6 +27,8 @@ targets:
         CFBundleDisplayName: BetterEcon
         CFBundleName: Better US Econ Data
         ITSAppUsesNonExemptEncryption: false
+        BGTaskSchedulerPermittedIdentifiers:
+          - com.betterecon.app.alert-refresh
         UILaunchScreen: {}
         UISupportedInterfaceOrientations:
           - UIInterfaceOrientationPortrait

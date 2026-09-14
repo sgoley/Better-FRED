@@ -10,6 +10,7 @@ An open-source SwiftUI client for exploring, comparing, and monitoring US macroe
 - Series detail with interactive Swift Charts graph
 - Time-range switching
 - Local watchlist persistence
+- Local observation and threshold alerts with exact-decimal FRED comparisons, persisted rules, and best-effort iOS background refresh (no server or push relay)
 - Protocol-based FRED API client with preview data
 - WidgetKit-ready shared model boundary
 

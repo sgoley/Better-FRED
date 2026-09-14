@@ -17,6 +17,7 @@ struct SeriesDetailView: View {
     @State private var toastMessage: String?
     @State private var exportImage: UIImage?
     @State private var showShareSheet = false
+    @State private var showAlerts = false
 
     private var observations: [Observation] {
         snapshot?.observations ?? []
@@ -77,6 +78,9 @@ struct SeriesDetailView: View {
             if let exportImage {
                 ActivityView(activityItems: [exportImage])
             }
+        }
+        .sheet(isPresented: $showAlerts) {
+            SeriesAlertsSheet(series: series, alertService: model.alerts)
         }
         .task {
             snapshot = try? await model.snapshot(for: series)
@@ -166,6 +170,14 @@ struct SeriesDetailView: View {
                             .background(BetterTheme.cyan, in: Circle())
                             .foregroundStyle(BetterTheme.ink)
                     }
+
+                    Button { showAlerts = true } label: {
+                        Image(systemName: "bell.badge")
+                            .font(.caption2.bold())
+                            .padding(6)
+                            .background(BetterTheme.navy, in: Circle())
+                            .foregroundStyle(BetterTheme.cyan)
+                    }
                 }
             }
             .padding(.horizontal, 16)
@@ -239,6 +251,16 @@ struct SeriesDetailView: View {
                         model.toggleSaved(series)
                     } label: {
                         Image(systemName: model.isSaved(series) ? "bookmark.fill" : "bookmark")
+                            .font(.title3)
+                            .foregroundStyle(BetterTheme.cyan)
+                            .padding(8)
+                            .background(BetterTheme.navy, in: Circle())
+                    }
+
+                    Button {
+                        showAlerts = true
+                    } label: {
+                        Image(systemName: "bell.badge")
                             .font(.title3)
                             .foregroundStyle(BetterTheme.cyan)
                             .padding(8)
@@ -527,6 +549,229 @@ struct SeriesDetailView: View {
         DispatchQueue.main.asyncAfter(deadline: .now() + 2.4) {
             withAnimation { showToast = false }
         }
+    }
+}
+
+private enum AlertDraftKind: String, CaseIterable, Identifiable {
+    case newObservation
+    case crossesAbove
+    case crossesBelow
+    case risesBy
+
+    var id: Self { self }
+
+    var label: String {
+        switch self {
+        case .newObservation: return "Any new observation"
+        case .crossesAbove: return "Crosses above X"
+        case .crossesBelow: return "Crosses below X"
+        case .risesBy: return "Rises by X"
+        }
+    }
+
+    var needsValue: Bool { self != .newObservation }
+}
+
+struct SeriesAlertsSheet: View {
+    @EnvironmentObject private var model: AppModel
+    @Environment(\.dismiss) private var dismiss
+
+    let series: FREDSeries
+    @ObservedObject var alertService: AlertService
+
+    @State private var draftKind: AlertDraftKind = .newObservation
+    @State private var thresholdText = ""
+    @State private var keepMonitoring = true
+    @State private var isSaving = false
+    @State private var statusMessage: String?
+
+    private var rules: [AlertRule] {
+        alertService.rules(for: series.id)
+    }
+
+    var body: some View {
+        NavigationStack {
+            Form {
+                Section {
+                    HStack(alignment: .top, spacing: 10) {
+                        Image(systemName: alertService.authorizationStatus.canDeliver ? "bell.badge.fill" : "bell.slash.fill")
+                            .foregroundStyle(alertService.authorizationStatus.canDeliver ? BetterTheme.cyan : BetterTheme.coral)
+                        VStack(alignment: .leading, spacing: 3) {
+                            Text(alertService.authorizationStatus.canDeliver ? "Local alerts enabled" : "Notification permission needed")
+                                .font(.subheadline.weight(.semibold))
+                            Text(alertService.authorizationStatus.description)
+                                .font(.caption)
+                                .foregroundStyle(.secondary)
+                        }
+                    }
+                    if !alertService.authorizationStatus.canDeliver {
+                        Button("Enable Notifications") {
+                            Task {
+                                let granted = await model.requestAlertAuthorization()
+                                statusMessage = granted ? "Notifications enabled." : alertService.authorizationStatus.description
+                            }
+                        }
+                    }
+                } header: {
+                    Text("Delivery")
+                } footer: {
+                    Text("Alerts are evaluated on app launch and when iOS grants BetterEcon a background refresh. They are not real-time push notifications.")
+                }
+
+                Section("Your alerts") {
+                    if rules.isEmpty {
+                        Text("No alerts for \(series.id) yet.")
+                            .foregroundStyle(.secondary)
+                    } else {
+                        ForEach(rules) { rule in
+                            VStack(alignment: .leading, spacing: 8) {
+                                HStack {
+                                    Text(rule.trigger.alertDisplayDescription)
+                                        .font(.body.weight(.semibold))
+                                    Spacer()
+                                    if rule.isOneShot {
+                                        Text("ONE TIME")
+                                            .font(.caption2.weight(.bold))
+                                            .foregroundStyle(BetterTheme.coral)
+                                    }
+                                }
+                                Toggle("Enabled", isOn: Binding(
+                                    get: { rule.isEnabled },
+                                    set: { enabled in
+                                        Task {
+                                            await model.setAlert(id: rule.id, enabled: enabled, for: series)
+                                        }
+                                    }
+                                ))
+                                .font(.caption)
+
+                                if let lastTriggeredDate = rule.lastTriggeredDate {
+                                    Text("Last triggered for \(lastTriggeredDate.formatted(date: .abbreviated, time: .omitted))")
+                                        .font(.caption2)
+                                        .foregroundStyle(.secondary)
+                                }
+                            }
+                            .padding(.vertical, 3)
+                        }
+                        .onDelete { offsets in
+                            let ruleIDs = offsets.map { rules[$0].id }
+                            for ruleID in ruleIDs {
+                                model.removeAlert(id: ruleID)
+                            }
+                        }
+                    }
+                }
+
+                Section("Add an alert") {
+                    Picker("When", selection: $draftKind) {
+                        ForEach(AlertDraftKind.allCases) { kind in
+                            Text(kind.label).tag(kind)
+                        }
+                    }
+
+                    if draftKind.needsValue {
+                        TextField(draftKind == .risesBy ? "Change amount" : "Threshold", text: $thresholdText)
+                            .keyboardType(.decimalPad)
+                        Text("Values use the raw FRED reading in \(series.units).")
+                            .font(.caption)
+                            .foregroundStyle(.secondary)
+                    }
+
+                    Toggle("Keep monitoring after it triggers", isOn: $keepMonitoring)
+                    Text(keepMonitoring
+                         ? "This alert remains enabled after each qualifying release."
+                         : "This alert disables itself after its first notification.")
+                        .font(.caption)
+                        .foregroundStyle(.secondary)
+
+                    Button {
+                        saveRule()
+                    } label: {
+                        HStack {
+                            Spacer()
+                            if isSaving {
+                                ProgressView().padding(.trailing, 4)
+                            }
+                            Label("Add Alert", systemImage: "bell.badge.fill")
+                            Spacer()
+                        }
+                    }
+                    .disabled(isSaving)
+                }
+
+                if let statusMessage {
+                    Section {
+                        Text(statusMessage)
+                            .font(.caption)
+                            .foregroundStyle(statusMessage == "Alert added." ? BetterTheme.sage : BetterTheme.coral)
+                    }
+                }
+            }
+            .navigationTitle("\(series.id) Alerts")
+            .navigationBarTitleDisplayMode(.inline)
+            .toolbar {
+                ToolbarItem(placement: .topBarTrailing) {
+                    Button("Done") { dismiss() }
+                }
+            }
+            .task {
+                await alertService.refreshAuthorizationStatus()
+            }
+            .onChange(of: draftKind) { _, newValue in
+                keepMonitoring = newValue == .newObservation
+                statusMessage = nil
+            }
+        }
+    }
+
+    private func saveRule() {
+        guard let trigger = makeTrigger() else {
+            statusMessage = "Enter a valid decimal value for this alert."
+            return
+        }
+
+        Task {
+            isSaving = true
+            defer { isSaving = false }
+
+            if !alertService.authorizationStatus.canDeliver {
+                let granted = await model.requestAlertAuthorization()
+                guard granted else {
+                    statusMessage = alertService.authorizationStatus.description
+                    return
+                }
+            }
+
+            _ = await model.createAlert(
+                for: series,
+                trigger: trigger,
+                isOneShot: !keepMonitoring
+            )
+            thresholdText = ""
+            statusMessage = "Alert added."
+        }
+    }
+
+    private func makeTrigger() -> AlertTrigger? {
+        switch draftKind {
+        case .newObservation:
+            return .newObservation
+        case .crossesAbove:
+            guard let value = decimalThreshold else { return nil }
+            return .comparison(.greaterThanOrEqual, threshold: value)
+        case .crossesBelow:
+            guard let value = decimalThreshold else { return nil }
+            return .comparison(.lessThanOrEqual, threshold: value)
+        case .risesBy:
+            guard let value = decimalThreshold else { return nil }
+            return .change(.greaterThanOrEqual, delta: value)
+        }
+    }
+
+    private var decimalThreshold: Decimal? {
+        let input = thresholdText.trimmingCharacters(in: .whitespacesAndNewlines)
+        guard !input.isEmpty else { return nil }
+        return Decimal(string: input, locale: Locale(identifier: "en_US_POSIX"))
     }
 }
 

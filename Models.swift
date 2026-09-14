@@ -13,6 +13,99 @@ struct Observation: Identifiable, Codable, Hashable {
     var id: Date { date }
     let date: Date
     let value: Double
+    /// The exact decimal representation reported by FRED. Charts use `value`, while
+    /// alert evaluation uses this value so threshold comparisons are never affected
+    /// by binary floating-point rounding.
+    let decimalValue: Decimal
+
+    init(date: Date, value: Double, decimalValue: Decimal? = nil) {
+        self.date = date
+        self.value = value
+        self.decimalValue = decimalValue
+            ?? Decimal(string: String(value), locale: Locale(identifier: "en_US_POSIX"))
+            ?? .zero
+    }
+
+    private enum CodingKeys: String, CodingKey {
+        case date
+        case value
+        case decimalValue
+    }
+
+    init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        let date = try container.decode(Date.self, forKey: .date)
+        let value = try container.decode(Double.self, forKey: .value)
+        let decimalValue = try container.decodeIfPresent(Decimal.self, forKey: .decimalValue)
+        self.init(date: date, value: value, decimalValue: decimalValue)
+    }
+
+    func encode(to encoder: Encoder) throws {
+        var container = encoder.container(keyedBy: CodingKeys.self)
+        try container.encode(date, forKey: .date)
+        try container.encode(value, forKey: .value)
+        try container.encode(decimalValue, forKey: .decimalValue)
+    }
+}
+
+enum AlertTrigger: Codable, Hashable {
+    case newObservation
+    case comparison(ComparisonOperator, threshold: Decimal)
+    case change(ComparisonOperator, delta: Decimal)
+
+    enum ComparisonOperator: String, Codable, CaseIterable, Hashable {
+        case greaterThan = ">"
+        case greaterThanOrEqual = ">="
+        case lessThan = "<"
+        case lessThanOrEqual = "<="
+        case equals = "=="
+        case notEquals = "!="
+
+        func matches(_ lhs: Decimal, _ rhs: Decimal) -> Bool {
+            switch self {
+            case .greaterThan: return lhs > rhs
+            case .greaterThanOrEqual: return lhs >= rhs
+            case .lessThan: return lhs < rhs
+            case .lessThanOrEqual: return lhs <= rhs
+            case .equals: return lhs == rhs
+            case .notEquals: return lhs != rhs
+            }
+        }
+    }
+}
+
+struct AlertRule: Identifiable, Codable, Hashable {
+    let id: UUID
+    let seriesID: String
+    var trigger: AlertTrigger
+    var isEnabled: Bool
+    var isOneShot: Bool
+    var createdAt: Date
+    var lastTriggeredDate: Date?
+
+    init(
+        id: UUID = UUID(),
+        seriesID: String,
+        trigger: AlertTrigger,
+        isEnabled: Bool = true,
+        isOneShot: Bool,
+        createdAt: Date = .now,
+        lastTriggeredDate: Date? = nil
+    ) {
+        self.id = id
+        self.seriesID = seriesID
+        self.trigger = trigger
+        self.isEnabled = isEnabled
+        self.isOneShot = isOneShot
+        self.createdAt = createdAt
+        self.lastTriggeredDate = lastTriggeredDate
+    }
+}
+
+struct AlertCursor: Codable, Hashable {
+    let seriesID: String
+    var lastSeenObservationDate: Date
+    var lastSeenValue: Decimal
 }
 
 struct SeriesSnapshot: Identifiable, Hashable {

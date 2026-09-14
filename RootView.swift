@@ -2,23 +2,51 @@ import SwiftUI
 import Charts
 
 struct RootView: View {
+    @EnvironmentObject private var model: AppModel
+    @EnvironmentObject private var navigation: AppNavigationCoordinator
+    @Environment(\.scenePhase) private var scenePhase
+
     var body: some View {
-        if CommandLine.arguments.contains("-mortgagePreview") {
-            NavigationStack { SeriesDetailView(series: SampleData.series.first { $0.id == "MORTGAGE30US" }!) }
-        } else if CommandLine.arguments.contains("-dffPreview") {
-            NavigationStack { SeriesDetailView(series: SampleData.series.first { $0.id == "DFF" }!) }
-        } else if CommandLine.arguments.contains("-fedFundsPreview") {
-            NavigationStack { SeriesDetailView(series: SampleData.series.first { $0.id == "FEDFUNDS" }!) }
-        } else {
-            TabView {
-                DashboardView().tabItem { Label("Overview", systemImage: "rectangle.grid.2x2") }
-                ExploreView().tabItem { Label("Explore", systemImage: "magnifyingglass") }
-                CompareView().tabItem { Label("Compare", systemImage: "chart.xyaxis.line") }
-                SavedView().tabItem { Label("Saved", systemImage: "bookmark") }
-                SettingsView().tabItem { Label("Settings", systemImage: "gearshape") }
+        Group {
+            if CommandLine.arguments.contains("-mortgagePreview") {
+                NavigationStack { SeriesDetailView(series: SampleData.series.first { $0.id == "MORTGAGE30US" }!) }
+            } else if CommandLine.arguments.contains("-dffPreview") {
+                NavigationStack { SeriesDetailView(series: SampleData.series.first { $0.id == "DFF" }!) }
+            } else if CommandLine.arguments.contains("-fedFundsPreview") {
+                NavigationStack { SeriesDetailView(series: SampleData.series.first { $0.id == "FEDFUNDS" }!) }
+            } else {
+                TabView(selection: $navigation.selectedTab) {
+                    DashboardView()
+                        .tabItem { Label("Overview", systemImage: "rectangle.grid.2x2") }
+                        .tag(AppNavigationCoordinator.Tab.overview)
+                    ExploreView()
+                        .tabItem { Label("Explore", systemImage: "magnifyingglass") }
+                        .tag(AppNavigationCoordinator.Tab.explore)
+                    CompareView()
+                        .tabItem { Label("Compare", systemImage: "chart.xyaxis.line") }
+                        .tag(AppNavigationCoordinator.Tab.compare)
+                    SavedView()
+                        .tabItem { Label("Saved", systemImage: "bookmark") }
+                        .tag(AppNavigationCoordinator.Tab.saved)
+                    SettingsView()
+                        .tabItem { Label("Settings", systemImage: "gearshape") }
+                        .tag(AppNavigationCoordinator.Tab.settings)
+                }
+                .tint(BetterTheme.cyan)
+                .background(BetterTheme.background)
             }
-            .tint(BetterTheme.cyan)
-            .background(BetterTheme.background)
+        }
+        .task {
+            AlertBackgroundScheduler.shared.setEvaluator {
+                await model.refreshAlertRules()
+            }
+            await model.prepareAlertMonitoring()
+        }
+        .onChange(of: scenePhase) { _, phase in
+            guard phase == .active else { return }
+            Task {
+                await model.prepareAlertMonitoring()
+            }
         }
     }
 }
@@ -512,14 +540,36 @@ struct ExploreView: View {
 
 struct SavedView: View {
     @EnvironmentObject private var model: AppModel
+    @EnvironmentObject private var navigation: AppNavigationCoordinator
+    @State private var path = NavigationPath()
+
     var body: some View {
-        NavigationStack {
+        NavigationStack(path: $path) {
             List(model.watchlist.compactMap(model.series(with:))) { series in
                 NavigationLink(value: series) { SeriesCard(series: series) }
             }
             .listStyle(.plain)
             .navigationTitle("Saved")
             .navigationDestination(for: FREDSeries.self) { SeriesDetailView(series: $0) }
+        }
+        .onAppear { openPendingAlert() }
+        .onChange(of: navigation.pendingSeriesID) { _, _ in
+            openPendingAlert()
+        }
+    }
+
+    private func openPendingAlert() {
+        guard navigation.selectedTab == .saved,
+              let seriesID = navigation.pendingSeriesID else { return }
+        Task {
+            guard let series = await model.resolveSeries(with: seriesID),
+                  navigation.pendingSeriesID == seriesID else { return }
+            if !model.isSaved(series) {
+                model.toggleSaved(series)
+            }
+            path = NavigationPath()
+            path.append(series)
+            navigation.pendingSeriesID = nil
         }
     }
 }
